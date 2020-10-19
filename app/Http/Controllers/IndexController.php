@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Department;
+use App\Product;
+use App\Cart;
+use App\CartItem;
+use Auth;
+
+class IndexController extends Controller
+{
+    public function index() {
+        $featured_products = Product::where('featured', '=', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+        $new_arrival = Product::where('new_arrival', '=', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+        $top_sales = Product::where('top_sales', '=', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+        return view('main.index', [
+            'featured' => $featured_products,
+            'new_arrival' => $new_arrival,
+            'top_sales' => $top_sales
+        ]);
+    }
+    public function home() {
+        $featured_products = Product::where('featured', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+        $new_arrival = Product::where('new_arrival', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+        $top_sales = Product::where('top_sales', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+        return view('main.home', [
+            'featured' => $featured_products,
+            'new_arrival' => $new_arrival,
+            'top_sales' => $top_sales
+        ]);
+    }
+
+    public function about() {
+        return view('main.about');
+    }
+
+    public function blog() {
+        return view('main.blog');
+    }
+
+    public function contact() {
+        return view('main.contact');
+    }
+
+    public function faq() {
+        return view('main.faq');
+    }
+}
