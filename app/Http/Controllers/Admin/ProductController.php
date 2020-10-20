@@ -76,7 +76,6 @@ class ProductController extends Controller
         $product->new_arrival = ($request->arrival == "on") ? 1 : 0;
         $product->top_sales = ($request->sales == "on") ? 1 : 0;
         $product->dept_id = $request->input('dept_id');
-        dd($request->image);
         $product->save();
         return redirect('/admin/itemlist');
     }
