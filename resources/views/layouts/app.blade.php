@@ -10,7 +10,7 @@
     <meta name="keywords" content="Online,Nepal, Template, eCommerce">
     <meta name="robots" content="all">
 
-    <title>Easy Shopping Nepal</title>
+    <title>Community Mart</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -18,6 +18,7 @@
      <!-- Site Icons -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png')}}">
+
 
     <!-- Customizable CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -37,13 +38,16 @@
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/logo.png">
 
-
+    <script src="{{asset('js/carousel.js')}}"></script>
 
     <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
     <!--[if lt IE 9]>
@@ -98,6 +102,10 @@
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/carousel.js')}}"></script>
     <!-- ALL PLUGINS -->
     <script src="{{asset('js/jquery.superslides.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-select.js')}}"></script>
@@ -110,5 +118,7 @@
     <script src="{{asset('js/form-validator.min.js')}}"></script>
     <script src="{{asset('js/contact-form-script.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
+
+
 </body>
 </html>

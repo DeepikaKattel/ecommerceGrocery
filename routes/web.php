@@ -39,10 +39,16 @@ Route::get('/admin/dashboard','Admin\DashboardController@index');
 Route::get('/admin/itemlist','Admin\ProductController@itemslist');
 Route::get('/admin/itemlist/add','Admin\ProductController@addItemPage');
 Route::post('/admin/itemlist/add','Admin\ProductController@additem');
+Route::get('/admin/itemlist/{id}/edit','Admin\ProductController@edit')->name('item.edit');
+Route::post('/admin/itemlist/{id}','Admin\ProductController@update')->name('item.update');
+Route::get('/admin/itemlist/destroy/{id}', 'Admin\ProductController@destroy')->name('i.destroy');
 
 Route::get('/admin/departmentList','Admin\DepartmentController@index');
 Route::get('/admin/department/add','Admin\DepartmentController@create');
 Route::post('/admin/department/add','Admin\DepartmentController@store');
+Route::get('/admin/department/{$id}/edit','Admin\DepartmentController@edit')->name('department.edit');
+Route::post('/admin/department/{$id}','Admin\DepartmentController@update')->name('department.update');
+Route::get('/admin/department/destroy/{id}', 'Admin\DepartmentController@destroy')->name('d.destroy');
 
 Route::get('/admin/vendor', 'Admin\VendorController@vendorList');
 Route::post('/admin/vendor', 'Admin\VendorController@addVendor');

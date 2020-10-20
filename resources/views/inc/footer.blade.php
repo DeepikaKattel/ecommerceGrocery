@@ -1,11 +1,10 @@
 <footer>
         <div class="footer-main">
             <div class="container">
-
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>About Freshshop</h4>
+                            <h4>About Community Mart</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
@@ -21,15 +20,9 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Find It Fast</h4>
-                            <ul>
-                                <li><a href="/products/tag_search?tag=laptop"><p>Laptops</p></a></li>
-                                <li><a href="/products/tag_search?tag=camera"><p>Cameras</p></a></li>
-                                <li><a href="/products/tag_search?tag=phone"><p>Smart Phones</p></a></li>
-                                <li><a href="/products/tag_search?tag=games"><p>Video Games</p></a></li>
-                            </ul>
-                        </div>
+                         <div class="footer-link">
+                            <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt="" style="height:130px;width:250px"></a>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -38,13 +31,11 @@
     <!-- End Footer  -->
 <!-- ============================================================= FOOTER ============================================================= -->
 <footer id="footer" class="color-bg">
-
-
     <div class="copyright-bar">
         <div class="container">
             <div class="col-xs-12 col-sm-4 no-margin">
                 <div class="copyright">
-                    &copy; <a href="/">Easy Shopping Nepal</a> - all rights reserved
+                    &copy; <a href="/">Community Mart</a> - all rights reserved
                 </div><!-- /.copyright -->
 
             </div>

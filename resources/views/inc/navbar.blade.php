@@ -1,16 +1,21 @@
 <!-- Start Main Top -->
+<style>
+.navbar-brand {
+    height:85px;
+}
+.bg-dark {
+    background-color: #dbd2d2!important;
+}
+</style>
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                    <div class="right-phone-box">
-                        <p>Call US :- +900 800 100</p>
-                    </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <li style="color:white">Call US :- +900 800 10</li>
+                            <li style="color:white"><i class="fas fa-location-arrow"></i> Our location</li>
+                            <li style="color:white"> Contact Us</li>
                         </ul>
                     </div>
                 </div>
@@ -83,7 +88,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt=""></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt="" style="height:60px;width:100px;margin-right:200px"></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -93,6 +98,16 @@
                         <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                        <li class="search">
+                            <form action="/products/search" method="POST" style="margin-top:5px;">
+                                @csrf
+                                <div class="control-group pb-3">
+                                    <input class="search-field" placeholder="Search..." name="query" style="height:40px;width:600px"/>
+                                    <button type="submit" style="height:40px;background:#b0b435"><i class="fa fa-search fa-lg"></i></button>
+                                    <a class="search-button" type="submit"></a>
+                                </div>
+                            </form>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -100,16 +115,6 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search">
-                            <form action="/products/search" method="POST" style="margin-top:40px">
-                                @csrf
-                                <div class="control-group">
-                                    <input class="search-field" placeholder="Search..." name="query" />
-                                    <i class="fa fa-search"></i>
-                                    <a class="search-button" type="submit"></a>
-                                </div>
-                            </form>
-                        </li>
                         <li>
                             <div class="col-xs-12 col-sm-12 col-md-3 top-cart-row no-margin">
                                 <div class="top-cart-row-container">

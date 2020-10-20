@@ -37,8 +37,9 @@
                 <td>
                     <form action="/admin/vendor/remove/{{$vendor->id}}" method="POST" class="text-center" onsubmit="test(event)">
                         @csrf
+
                         <input type="hidden" name="_method" value="DELETE">
-                        
+
                         <button type="submit" class="btn btn-outline-danger btn-sm" value="Remove"><i class="fa fa-trash pr-1" aria-hidden="true"></i> Remove</button>
                     </form>
                 </td>
@@ -57,6 +58,6 @@
             else{
                 e.preventDefault();
             }
-        } 
+        }
     </script> --}}
 @endsection

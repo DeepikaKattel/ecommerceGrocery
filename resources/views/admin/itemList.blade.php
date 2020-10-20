@@ -35,6 +35,7 @@
                     <th>Previous Price</th>
                     <th>SKU</th>
                     <th>Tags</th>
+                    <th>Action</th>
                 </tr>
                     @foreach ($items as $item)
                         <tr  class="text-center">
@@ -50,6 +51,11 @@
                             <td>Rs. {{$item->prev_price}}</td>
                             <td>{{$item->sku}}</td>
                             <td>{{$item->tags}}</td>
+                            <td>
+                                <a href="{{route('item.edit',$item->id)}}"><i class="fa fa-lg fa-edit"></i></a>
+                                @method('DELETE')
+                                <a onclick="return confirm('Do you want to delete')" href="{{route('i.destroy',$item->id)}}"><i class="fa fa-lg fa-minus-circle" style="color:red"></i></a>
+                            </td>
                         </tr>
                     @endforeach
             </table>

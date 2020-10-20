@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Department;
 use App\Vendor;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -55,6 +55,7 @@ class ProductController extends Controller
             $fileNameToStore = 'no-image.jpg';
         }
 
+
         $product = new Product();
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
@@ -75,7 +76,57 @@ class ProductController extends Controller
         $product->new_arrival = ($request->arrival == "on") ? 1 : 0;
         $product->top_sales = ($request->sales == "on") ? 1 : 0;
         $product->dept_id = $request->input('dept_id');
+        dd($request->image);
         $product->save();
+        return redirect('/admin/itemlist');
+    }
+    public function edit($id)
+    {
+        $departments = Department::all();
+        $vendors = Vendor::all();
+        $items = Product::find($id);
+        return view('admin.itemEdit', compact('items','departments','vendors'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        if($request->hasFile('image')){
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().".".$extension;
+            $path = $request->file('image')->storeAs('public/images/products', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'no-image.jpg';
+        }
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->brand = $request->input('brand');
+        if (Auth::user()->isAdmin()) {
+            $product->vendor_id = $request->input('vendor_id');
+        } else {
+            $product->vendor_id = Auth::user()->vendor_id;
+        }
+        $product->description = $request->input('description');
+        $product->quantity = $request->input('quantity');
+        $product->rate = $request->input('rate');
+        $product->prev_price = $request->input('prev_price');
+        $product->availability = $request->input('availability');
+        $product->image = $fileNameToStore;
+        $product->sku = $request->input('sku');
+        $product->tags = $request->input('tags');
+        $product->featured = ($request->featured == "on") ? 1 : 0;
+        $product->new_arrival = ($request->arrival == "on") ? 1 : 0;
+        $product->top_sales = ($request->sales == "on") ? 1 : 0;
+        $product->dept_id = $request->input('dept_id');
+        $product->save();
+
+        return redirect('/admin/itemlist');
+    }
+
+    public function destroy($id)
+    {
+        $items= Product::find($id)->delete();
         return redirect('/admin/itemlist');
     }
 }

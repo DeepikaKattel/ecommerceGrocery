@@ -28,6 +28,7 @@
                 <tr class="text-center">
                     <th>Sn</th>
                     <th>Name</th>
+                     <th>Action</th>
                 </tr>
                     @foreach ($department as $dept)
                         <tr  class="text-center">
@@ -36,6 +37,11 @@
                             @endphp
                             <td>{{$c}}</td>
                             <td>{{$dept->department_name}}</td>
+                            <td>
+                            <a href="{{route('department.edit',$dept->id)}}"><i class="fa fa-lg fa-edit"></i></a>
+                             @method('DELETE')
+                             <a onclick="return confirm('Do you want to delete')" href="{{route('d.destroy',$dept->id)}}"><i class="fa fa-lg fa-minus-circle" style="color:red"></i></a>
+                            </td>
                         </tr>
                     @endforeach
             </table>

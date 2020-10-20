@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Department;
 use App\Http\Controllers\Controller;
+use App\Model\Agent;
 use App\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,7 @@ class DepartmentController extends Controller
      */
     public function create(Request $request)
     {
-        $vendors = Vendor::all();
-        return view('admin.departmentAdd', compact( 'vendors'));
+        return view('admin.departmentAdd');
     }
 
     /**
@@ -73,7 +73,8 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department = Department::find($id);
+        return view('admin.departmentEdit', compact('department'));
     }
 
     /**
@@ -85,7 +86,10 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $department = Department::find($id);
+        $department->department_name = request('department_name');
+        $department->save();
+        return redirect('/admin/departmentList');
     }
 
     /**
@@ -96,6 +100,7 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department= Department::find($id)->delete();
+        return redirect('/admin/departmentList');
     }
 }
