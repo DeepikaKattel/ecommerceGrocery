@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Frontend;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Product;
@@ -24,10 +25,12 @@ class IndexController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(4)
                 ->get();
+        $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         return view('main.index', [
             'featured' => $featured_products,
             'new_arrival' => $new_arrival,
-            'top_sales' => $top_sales
+            'top_sales' => $top_sales,
+            'frontEnd' => $frontEnd,
         ]);
     }
     public function home() {

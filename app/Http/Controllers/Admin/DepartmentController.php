@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Department;
 use App\Http\Controllers\Controller;
-use App\Model\Agent;
-use App\Vendor;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

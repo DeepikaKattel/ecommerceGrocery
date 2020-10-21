@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Frontend;
-
-use App\Model\Destination;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -59,8 +58,8 @@ class FrontendController extends Controller
 
 
         $frontEnd = new Frontend();
-        $frontEnd->name = $request->input('heading');
-        $frontEnd->brand = $request->input('message');
+        $frontEnd->heading = $request->input('heading');
+        $frontEnd->message = $request->input('message');
         $frontEnd->image = $fileNameToStore;
         $frontEnd->save();
         return redirect('/frontend');

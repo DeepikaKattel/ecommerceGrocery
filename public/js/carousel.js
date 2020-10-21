@@ -1,5 +1,5 @@
 $('#myCarousel').carousel({
-    interval: 4000
+    interval: 3000
 });
 
 $('.carousel .carousel-item').each(function() {
@@ -22,10 +22,10 @@ $('.carousel .carousel-item').each(function() {
 
 
 $('#newCarousel').carousel({
-    interval: 4000
+    interval: 3000
 });
 $('#salesCarousel').carousel({
-    interval: 4000
+    interval: 3000
 });
 
 
