@@ -50,6 +50,7 @@
   transform: translateX(0);
 }
 
+
 </style>
 <!-- Start Slider -->
     <div class="row mx-5">

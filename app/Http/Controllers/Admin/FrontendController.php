@@ -99,6 +99,26 @@ class FrontendController extends Controller
     public function update(Request $request, $id)
     {
         $frontEnd = Frontend::find($id);
+        $this->validate($request, [
+            'heading' => 'required',
+            'message' => 'required',
+            'image' => 'image|nullable|max:1999',
+        ]);
+
+        if($request->hasFile('image')){
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().".".$extension;
+            $path = $request->file('image')->storeAs('public/images/slider', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'no-image.jpg';
+        }
+        $frontEnd->heading = $request->input('heading');
+        $frontEnd->message = $request->input('message');
+        $frontEnd->image = $fileNameToStore;
+        $frontEnd->save();
+        return redirect('/frontend');
     }
 
     /**
@@ -107,8 +127,9 @@ class FrontendController extends Controller
      * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
+    public function destroy($id)
     {
-        //
+        $frontEnd= Frontend::find($id)->delete();
+        return redirect('/frontend');
     }
 }

@@ -50,6 +50,9 @@ Route::get('/admin/department/{$id}/edit','Admin\DepartmentController@edit')->na
 Route::post('/admin/department/{$id}','Admin\DepartmentController@update')->name('department.update');
 Route::get('/admin/department/destroy/{id}', 'Admin\DepartmentController@destroy')->name('d.destroy');
 
+Route::resource('/frontend', 'FrontendController');
+Route::get('/frontend/destroy/{id}', 'FrontendController@destroy')->name('f.destroy');
+
 Route::get('/admin/vendor', 'Admin\VendorController@vendorList');
 Route::post('/admin/vendor', 'Admin\VendorController@addVendor');
 Route::delete('/admin/vendor/remove/{vendorId}','Admin\VendorController@deleteVendor');
