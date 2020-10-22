@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\ContactUs;
+use App\Mail\SendMail;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -51,6 +55,12 @@ class ContactUsController extends Controller
         $contact->save();
         $contactsave = $contact->save();
         if ($contactsave) {
+            $contactMessage = [
+                'title' => 'Contact Message',
+                'body' => $contact->name . '' . ' has something to say.'
+            ];
+            $message = new SendMail($contactMessage,$contact);
+            Mail::to('deepika.kattel123@gmail.com')->send($message);
             return redirect()->back()->with("success", "Your message has been sent");
         } else {
             return redirect()->back()->with("error", "There is an error");
