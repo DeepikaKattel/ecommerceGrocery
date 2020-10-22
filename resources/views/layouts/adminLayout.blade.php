@@ -186,6 +186,23 @@
                   </li>
               </ul>
           </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Contact
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/contact/list" class="nav-link">
+                    <i class="fas fa-list nav-icon"></i>
+                    <p>List Contacts</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
         @endif
         <li class="nav-item">
             <a href="/admin/checkouts" class="nav-link">

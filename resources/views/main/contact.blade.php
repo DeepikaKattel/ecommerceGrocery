@@ -35,9 +35,54 @@
     </div>
     <!-- ========================================= MAIN ========================================= -->
     <main id="contact-us" class="inner-bottom-md">
-
         <div class="container">
             <div class="row">
+                <div class="col-md-8">
+                 @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (\Illuminate\Support\Facades\Session::has('success'))
+                        <div class="alert alert-success">
+                            {!! session('success') !!}
+                        </div>
+                    @endif
+                    <section class="section leave-a-message">
+                        <h2 class="bordered">Leave a Message</h2>
+                        <form action="{{route('contact.store')}}" id="contact-form" class="contact-form cf-style-1 inner-top-xs" method="post" >
+                            @csrf
+                            <div class="row field-row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <label>Your Name*</label>
+                                    <input class="le-input" type="text" name="name">
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <label>Your Email*</label>
+                                    <input class="le-input" type="email" name="email">
+                                </div>
+                            </div><!-- /.field-row -->
+
+                            <div class="field-row">
+                                <label>Subject</label>
+                                <input type="text" class="le-input" name="subject">
+                            </div><!-- /.field-row -->
+
+                            <div class="field-row">
+                                <label>Your Message</label>
+                                <textarea rows="8" class="le-input" name="message"></textarea>
+                            </div><!-- /.field-row -->
+
+                            <div class="buttons-holder">
+                                <button type="submit" class="le-button huge">Send Message</button>
+                            </div><!-- /.buttons-holder -->
+                        </form><!-- /.contact-form -->
+                    </section><!-- /.leave-a-message -->
+                </div><!-- /.col -->
 
                 <div class="col-md-4">
                     <section class="our-store section inner-left-xs">

@@ -17,7 +17,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/home', 'IndexController@home')->name('home');
 Route::get('/about', 'IndexController@about')->name('about');
 Route::get('/blog', 'IndexController@blog');
-Route::get('/contact', 'IndexController@contact');
+
 Route::get('/faq', 'IndexController@faq');
 
 Route::get('/product/{id}', 'ProductsController@showProduct');
@@ -49,6 +49,11 @@ Route::post('/admin/department/add','Admin\DepartmentController@store');
 Route::get('/admin/department/{$id}/edit','Admin\DepartmentController@edit')->name('department.edit');
 Route::post('/admin/department/{$id}','Admin\DepartmentController@update')->name('department.update');
 Route::get('/admin/department/destroy/{id}', 'Admin\DepartmentController@destroy')->name('d.destroy');
+
+Route::get('/contact', 'IndexController@contact');
+Route::get('/contact/list','ContactUsController@index');
+Route::post('/contact/add','ContactUsController@store')->name('contact.store');
+Route::get('/contact/destroy/{id}', 'ContactUsController@destroy')->name('c.destroy');
 
 Route::resource('/frontend', 'Admin\FrontendController');
 Route::get('/frontend/destroy/{id}', 'Admin\FrontendController@destroy')->name('f.destroy');
