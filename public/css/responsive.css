@@ -73,6 +73,28 @@
          display: none;
     }
 }
+@media (min-width: 775px)  {
+    .our-link ul.right {
+        float: right;
+        margin-right:-70%;
+        text-align: center;
+    }
+}
+@media (min-width: 992px){
+    nav.navbar .navbar-brand img.logo {
+        height:60px;
+        width:100px;
+        margin-right:200px;
+    }
+}
+@media (max-width: 992px){
+    nav.navbar .navbar-brand img.logo {
+        width:60px;
+        height:30px;
+    }
+}
+
+}
 /* mobile or only mobile */
  @media (max-width: 767px) {
      nav.navbar.bootsnav .navbar-header{
@@ -114,7 +136,7 @@
          display: none;
     }
      .right-phone-box, .our-link{
-         float: none;
+         float: left;
          text-align: center;
     }
      .filter-button-group button{
@@ -329,4 +351,4 @@
 		display: none;
 	}
 }
- 
+

@@ -165,7 +165,9 @@
  .main-top{
      background: #000000;
      padding-top: 5px;
+     justify-content: space-between;
 }
+
  .custom-select-box{
      float: left;
      width: 95px;
@@ -799,8 +801,8 @@
 	 border-radius: 6px;
 }
  .slides-pagination a.current{
-     background: #b0b435;
-     border: 2px solid #b0b435;
+     background: #547338;
+     border: 2px solid #547338;
 }
  .cover-slides p a{
      font-size: 24px;

@@ -20,9 +20,8 @@
     </div>
 
     <div class="col-md-10 offset-md-1 col-sm-12">
-        <form action="{{route(department.update',$department->id)}}" enctype="multipart/form-data">
+        <form action="{{route('department.update',$department->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('PATCH')
             <div class="form-group">
                 <label for="name">Department Name:</label>
                 <input type="text" class="form-control" name="department_name">

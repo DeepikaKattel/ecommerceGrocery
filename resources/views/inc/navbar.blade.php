@@ -6,7 +6,7 @@
 .bg-dark {
     background-color: #dbd2d2!important;
 }
-form{
+.form{
     position: relative;
     top: 50%;
     left: 50%;
@@ -21,7 +21,7 @@ form{
     padding: 5px;
 }
 
-input{
+.form input{
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@ input{
     padding: 0 20px;
 }
 
-li form .fa{
+li .form .fa{
     box-sizing: border-box;
     padding-top: 15px;
     width: 42.5px;
@@ -51,12 +51,12 @@ li form .fa{
     transition: all 1s;
 }
 
-form:hover{
+.form:hover{
     width: 200px;
     cursor: pointer;
 }
 
-form:hover input{
+.form:hover input{
     display: block;
 }
 
@@ -82,7 +82,7 @@ form:hover .fa{
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="our-link" style="float:right">
+					<div class="our-link">
                         <ul class="right">
                         @guest
                             <li><a href="/register" style="color:white">Register</a></li>
@@ -150,7 +150,7 @@ form:hover .fa{
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt="" style="height:60px;width:100px;margin-right:200px"></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt="" ></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -159,7 +159,7 @@ form:hover .fa{
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 
                         <li>
-                            <form action="/products/search" method="POST">
+                            <form class="form" action="/products/search" method="POST">
                                 @csrf
                                 <div class="control-group pb-3">
                                     <input class="search-field" type="search" placeholder="Search..." name="query" />
@@ -193,8 +193,8 @@ form:hover .fa{
                                                         <span class="count">0</span>
                                                         <img src="/assets/images/icon-cart.png" alt="" />
                                                     </div>
-                                                    <div class="total-price-basket" style="width:200px">
-                                                        <span class="lbl" style="font-size:10px">Manage cart</span>
+                                                    <div class="total-price-basket" style="width:100px">
+                                                        <span class="lbl" style="font-size:9px">Manage cart</span>
                                                     </div>
                                                 </a>
                                                 @else
