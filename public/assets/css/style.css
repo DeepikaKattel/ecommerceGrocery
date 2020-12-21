@@ -776,10 +776,10 @@ header {
           top: 5px;
           right: 12px;
           border-radius: 100px;
-          width: 21px;
-          height: 21px;
-          line-height: 21px;
-          font-size: 12px;
+          width: 15px;
+          height: 15px;
+          line-height: 15px;
+          font-size: 10px;
           font-weight: bold;
           text-align: center; }
       header .top-cart-row .top-cart-holder .dropdown-toggle {
@@ -1413,9 +1413,9 @@ header {
   font-weight: bold;
   padding: 10px 20px;
   display: inline-block;
-  line-height: 20px;
+  line-height: 15px;
   border: none;
-  font-size: 15px;
+  font-size: 10px;
   color: #fff;
   transition: 0.3s ease; }
   .le-button.huge {
@@ -1921,9 +1921,9 @@ text-slider-right{
     margin-bottom: 10px; }
     .product-item-holder.hover.size-small .product-item .add-cart-button a {
       padding: 5px 10px !important;
-      font-size: 12px !important; }
+      font-size: 10px !important; }
       .product-item-holder.hover.size-small .product-item .add-cart-button a:before {
-        font-size: 12px !important; }
+        font-size: 10px !important; }
   .product-item-holder.hover.size-small .product-item .hover-area {
     bottom: 9px; }
     .product-item-holder.hover.size-small .product-item .hover-area .wish-compare a {

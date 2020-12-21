@@ -68,4 +68,7 @@ class IndexController extends Controller
     public function faq() {
         return view('main.faq');
     }
+    public function carousel() {
+        return view('carousel');
+    }
 }

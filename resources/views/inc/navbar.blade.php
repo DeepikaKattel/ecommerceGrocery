@@ -6,6 +6,67 @@
 .bg-dark {
     background-color: #dbd2d2!important;
 }
+form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+li form .fa{
+    box-sizing: border-box;
+    padding-top: 15px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
+}
+.nav-item a{
+    font-size: 10px;
+}
 </style>
     <div class="main-top">
         <div class="container-fluid">
@@ -16,6 +77,7 @@
                             <li style="color:white">Call US :- +900 800 10</li>
                             <li style="color:white"><i class="fas fa-location-arrow"></i> Our location</li>
                             <li style="color:white"> Contact Us</li>
+
                         </ul>
                     </div>
                 </div>
@@ -95,32 +157,35 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-                        <li class="search">
-                            <form action="/products/search" method="POST" style="margin-top:5px;">
+
+                        <li>
+                            <form action="/products/search" method="POST">
                                 @csrf
                                 <div class="control-group pb-3">
-                                    <input class="search-field" placeholder="Search..." name="query" style="height:40px;width:600px"/>
-                                    <button type="submit" style="height:40px;background:#b0b435"><i class="fa fa-search fa-lg"></i></button>
+                                    <input class="search-field" type="search" placeholder="Search..." name="query" />
+                                    <i class="fa fa-search fa-lg"></i>
                                     <a class="search-button" type="submit"></a>
                                 </div>
                             </form>
                         </li>
+
+
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
 
                 <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
+                <div class="attr-nav" style="margin-right:5%">
                     <ul>
                         <li>
                             <div class="col-xs-12 col-sm-12 col-md-3 top-cart-row no-margin">
                                 <div class="top-cart-row-container">
                                     <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
                                     <div class="top-cart-holder dropdown animate-dropdown" >
-                                        <div class="basket" id="cart-dropdown">
+                                        <div class="basket" id="cart-dropdown" style="width:40px;height:40px">
                                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                                 @guest
                                                 <a href="/login">
@@ -128,7 +193,7 @@
                                                         <span class="count">0</span>
                                                         <img src="/assets/images/icon-cart.png" alt="" />
                                                     </div>
-                                                    <div class="total-price-basket" style="width:100px">
+                                                    <div class="total-price-basket" style="width:200px">
                                                         <span class="lbl" style="font-size:10px">Manage cart</span>
                                                     </div>
                                                 </a>

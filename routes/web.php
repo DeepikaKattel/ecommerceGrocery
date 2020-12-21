@@ -18,6 +18,8 @@ Route::get('/home', 'IndexController@home')->name('home');
 Route::get('/about', 'IndexController@about')->name('about');
 Route::get('/blog', 'IndexController@blog');
 
+Route::get('/carousel', 'IndexController@carousel');
+
 Route::get('/faq', 'IndexController@faq');
 
 Route::get('/product/{id}', 'ProductsController@showProduct');

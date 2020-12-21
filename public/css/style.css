@@ -152,7 +152,7 @@
      padding-top:10px;
      text-align: center;
      line-height: 5px;
-     background: #b0b435;
+     background: #547338;
      color: #ffffff;
      cursor: pointer;
      border: 0;
@@ -507,25 +507,25 @@
  nav.navbar.bootsnav ul.nav > li > a{
      position: relative;
      font-weight: 700;
-     font-size: 16px;
+     font-size: 12px;
      color: #000000;
 	 text-transform: uppercase;
      padding-top: 10px;
      padding-bottom: 10px;
      padding-left: 10px;
-     padding-right: 30px;
+     padding-right: 10px;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
-     color: #b0b435;
+     color: #ff8159;
 }
  nav.navbar.bootsnav ul.nav li.active > a:hover{
-     color: #b0b435;
+     color: #ff8159;
 }
  nav.navbar.bootsnav ul.nav li > a:hover{
-     color: #b0b435;
+     color: #ff5722;
 }
  nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover{
-     color: #b0b435;
+     color: #ff8159;
 }
  @media (min-width: 1024px) {
      nav.navbar.navbar-inverse ul.nav .dropdown-menu{
@@ -743,23 +743,23 @@
      height: 100vh;
 }
  .slides-navigation a {
-     background: #b0b435;
+     background: #ff8159;
      position: absolute;
-     height: 70px;
-     width: 70px;
-     top: 50%;
-     font-size: 20px;
+     height: 50px;
+     width: 50px;
+     font-size: 10px;
      display: block;
      color: #fff;
-     line-height: 90px;
+     line-height: 60px;
      text-align: center;
      transition: all .3s ease-in-out;
 }
  .slides-navigation a i{
-     font-size: 40px;
+     font-size: 20px;
 }
  .slides-navigation a:hover {
      background: #000000;
+     color:white;
 }
  .cover-slides .container{
      height: 100%;

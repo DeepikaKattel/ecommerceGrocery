@@ -11,7 +11,7 @@ h2, a, a:hover, a:focus, a:active, .primary-color, .le-color, .breadcrumb-nav-ho
   background-color: #b0b435 !important; }
 
 .primary-bg, .le-dropdown, .le-button, .social-icons li a:hover, header .search-area .search-button, header .top-search-holder .search-area .search-button, header .top-cart-row .top-cart-holder .basket-item-count .count, .sidemenu-holder .side-menu .head, .slider-selection, #top-megamenu-nav, .single-product-gallery .gallery-thumbs .next-btn:hover, .single-product-gallery .gallery-thumbs .prev-btn:hover, .btn-loadmore:hover i {
-  background-color: #b0b435; }
+  background-color: #ff8159; }
 
 .le-radio:checked + .fake-box:after {
   background-color: #b0b435; }

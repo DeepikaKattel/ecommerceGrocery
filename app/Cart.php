@@ -7,7 +7,7 @@ use App\CartItem;
 use App\Checkout;
 use App\User;
 
-class cart extends Model
+class Cart extends Model
 {
     protected $attributes = [
         'grand_total' => 0,
