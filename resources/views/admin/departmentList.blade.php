@@ -15,9 +15,9 @@
         </div>
     </div>
 
-    <div class="col-sm-6 ml-3 mb-2">
-        <a href="/admin/userlist" class="btn btn-info btn-sm "><i class="fa fa-arrow-left" aria-hidden="true"></i> {{_('Back')}}</a>
-    </div>
+{{--    <div class="col-sm-6 ml-3 mb-2">--}}
+{{--        <a href="/admin/departmentlist" class="btn btn-info btn-sm "><i class="fa fa-arrow-left" aria-hidden="true"></i> {{_('Back')}}</a>--}}
+{{--    </div>--}}
 
     <div class="col-md-10 offset-md-1 col-sm-12">
         @if($department)

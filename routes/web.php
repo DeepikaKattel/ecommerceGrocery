@@ -48,8 +48,8 @@ Route::get('/admin/itemlist/destroy/{id}', 'Admin\ProductController@destroy')->n
 Route::get('/admin/departmentList','Admin\DepartmentController@index');
 Route::get('/admin/department/add','Admin\DepartmentController@create');
 Route::post('/admin/department/add','Admin\DepartmentController@store');
-Route::get('/admin/department/{$id}/edit','Admin\DepartmentController@edit')->name('department.edit');
-Route::post('/admin/department/{$id}','Admin\DepartmentController@update')->name('department.update');
+Route::get('/admin/department/{id}/edit','Admin\DepartmentController@edit')->name('department.edit');
+Route::post('/admin/department/{id}','Admin\DepartmentController@update')->name('department.update');
 Route::get('/admin/department/destroy/{id}', 'Admin\DepartmentController@destroy')->name('d.destroy');
 
 Route::get('/contact', 'IndexController@contact');
@@ -70,6 +70,11 @@ Route::post('/admin/user/add','Admin\UserController@addUser');
 Route::delete('/admin/user/remove/{userid}','Admin\UserController@removeUser');
 
 Route::get('/admin/checkouts','Admin\CheckoutController@getCheckouts');
+
+
+Route::get('file-import-export', 'Admin\ProductController@fileImportExport');
+Route::post('file-import', 'Admin\ProductController@fileImport')->name('file-import');
+Route::get('file-export', 'Admin\ProductController@fileExport')->name('file-export');
 
 
 Auth::routes();

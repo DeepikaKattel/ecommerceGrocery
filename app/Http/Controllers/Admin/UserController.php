@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Vendor;
@@ -38,6 +39,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->user_role = 2;
         $user->vendor_id = $request->input('vendor_id');
+        $user->created_at = Carbon::now();
         $user->save();
 
         return redirect('/admin/userlist');

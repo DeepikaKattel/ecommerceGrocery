@@ -2219,6 +2219,7 @@ text-slider-right{
   position: fixed;
   right: 20px;
   top: 45%;
+    z-index: 3;
   border-radius: 10px;
   color: white;
   background: #b0b435;}

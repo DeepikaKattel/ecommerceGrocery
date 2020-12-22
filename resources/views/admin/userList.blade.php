@@ -27,13 +27,13 @@
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->created_at->format('d M Y')}}</td>
+                <td>{{$user->created_at}}</td>
                 {{-- <td class=" text-center"> <a href="" class="btn btn-outline-info btn-sm"><i class="fa fa-eye pr-1" aria-hidden="true"></i> View</a></td>  --}}
                 <td>
                     <form action="/admin/user/remove/{{$user->id}}" method="POST" class="text-center" onsubmit="test(event)">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE">
-                        
+
                         <button type="submit" class="btn btn-outline-danger btn-sm" value="Remove"><i class="fa fa-trash pr-1" aria-hidden="true"></i> Remove</button>
                     </form>
                 </td>
@@ -52,6 +52,6 @@
             else{
                 e.preventDefault();
             }
-        } 
+        }
     </script>
 @endsection

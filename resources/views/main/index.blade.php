@@ -20,6 +20,26 @@
         height:150px;
         width:150px;
     }
+    @media(max-width:560px){
+        .title a{
+            font-size: 10px;
+        }
+        .badge{
+            font-size: 7px;
+        }
+        .price-current{
+            font-size: 10px;
+        }
+        .le-button{
+            font-size: 5px;
+            padding:5px 5px;
+            line-height: 5px;
+        }
+        .item img{
+            height:80px;
+            width:50px;
+        }
+    }
     .container-slider{
         max-width:1040px;
         margin: 100px auto;
@@ -80,6 +100,11 @@
         overflow: hidden;
         background-color: #547338;
     }
+    @media (max-width:750px){
+    .categories ul{
+        font-size: 10px;
+        justify-content: space-evenly;
+    }}
 
     .categories li {
         float: left;

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\ProductsImport;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Department;
 use App\Vendor;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductsExport;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -127,5 +130,23 @@ class ProductController extends Controller
     {
         $items= Product::find($id)->delete();
         return redirect('/admin/itemlist');
+    }
+
+    public function fileImportExport()
+    {
+        return view('file-import');
+    }
+
+
+    public function fileImport(Request $request)
+    {
+        Excel::import(new ProductsImport, $request->file('file')->store('temp'));
+        return back();
+    }
+
+
+    public function fileExport()
+    {
+        return Excel::download(new ProductsExport, 'products-collection.xlsx');
     }
 }

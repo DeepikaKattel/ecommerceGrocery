@@ -94,7 +94,6 @@
     }
 }
 
-}
 /* mobile or only mobile */
  @media (max-width: 767px) {
      nav.navbar.bootsnav .navbar-header{
@@ -229,6 +228,7 @@
  @media only screen and (min-width: 280px) and (max-width: 599px) {
      .navbar-light .navbar-toggler{
          border-color: #b0b435;
+         display: flex;
          color: #010101;
          border-radius: 0px;
          margin-right: 7px;
