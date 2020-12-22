@@ -987,9 +987,9 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     /* Navbar Responsive
     =================================*/
     nav.navbar.bootsnav .navbar-brand    {
-        display: inline-block;
-        float: none !important;
-        margin: 0 100px !important;
+        /*display: inline-block;*/
+        /*float: none !important;*/
+        margin: 10px 10px !important;
     }
 
     nav.navbar.bootsnav .navbar-header {
