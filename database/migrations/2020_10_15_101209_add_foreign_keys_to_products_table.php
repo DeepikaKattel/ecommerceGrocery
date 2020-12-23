@@ -14,8 +14,8 @@ class AddForeignKeysToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-			$table->foreign('vendor_id')->references('id')->on('vendors')->onUpdate('RESTRICT')->onDelete('CASCADE');
-            $table->foreign('dept_id')->references('id')->on('departments')->onUpdate('RESTRICT')->onDelete('CASCADE');
+//			$table->foreign('vendor_id')->references('id')->on('vendors')->onUpdate('RESTRICT')->onDelete('CASCADE');
+            $table->foreign('dept_id')->references('id')->on('departments')->onUpdate('RESTRICT')->onDelete('set null');
         });
     }
 

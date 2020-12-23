@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\ExcelProduct;
+use App\Product;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
@@ -20,10 +20,10 @@ class ProductsImport implements ToModel
     }
     public function model(array $col)
     {
-        return new ExcelProduct([
+        return new Product([
             'id'     => $col[0],
             'name'    => $col[1],
-            'category'    => $col[2],
+            'description' => $col[2],
             'quantity' => $col[3],
             'rate' => $col[4]
         ]);
