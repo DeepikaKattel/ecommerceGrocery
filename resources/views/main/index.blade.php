@@ -25,7 +25,7 @@
             font-size: 10px;
         }
         .badge{
-            font-size: 7px;
+            font-size: 5px;
         }
         .price-current{
             font-size: 10px;
@@ -36,12 +36,12 @@
             line-height: 5px;
         }
         .item img{
-            height:80px;
+            height:50px;
             width:50px;
         }
     }
     .container-slider{
-        max-width:1040px;
+        max-width:1200px;
         margin: 100px auto;
     }
     h1{
@@ -458,12 +458,12 @@
         <div class="logo-slider">
             @foreach ($top_sales as $f)
                 <div class="item">
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <a href="#">
                             <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
                         </a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <div class="body center">
                             <div class="title">
                                 <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
