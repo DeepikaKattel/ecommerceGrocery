@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactUsController extends Controller
 {
@@ -61,7 +62,8 @@ class ContactUsController extends Controller
             ];
             $message = new SendMail($contactMessage,$contact);
             Mail::to('deepika.kattel123@gmail.com')->send($message);
-            return redirect()->back()->with("success", "Your message has been sent");
+            Alert::success('Thank you', 'We will respond as soon as possible');
+            return redirect()->back();
         } else {
             return redirect()->back()->with("error", "There is an error");
         }

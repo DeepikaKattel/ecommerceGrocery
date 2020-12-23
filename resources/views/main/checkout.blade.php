@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="animate-dropdown">
         <!-- ========================================= BREADCRUMB ========================================= -->
         <div id="top-mega-nav">
@@ -41,7 +42,7 @@
             </div>
             <div class="section col-xs-12 col-sm-6 col-md-8">
                 <h1 class="border">Checkout Form</h1>
-                
+
                 <form action="" method="POST">
                     @csrf
                     <div class="field-row">

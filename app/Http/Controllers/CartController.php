@@ -7,6 +7,7 @@ use App\Cart;
 use App\CartItem;
 use App\Product;
 use App\Checkout;
+Use RealRashid\SweetAlert\Facades\Alert;
 use Auth;
 
 class CartController extends Controller
@@ -54,7 +55,7 @@ class CartController extends Controller
             return response()->json(array("error" => "Unauthorized error"), 401);
         }
     }
-    
+
     public function createCartItem($p_id, $id) {
         $cartItem = CartItem::where([
             ['cart_id', '=', $id],
@@ -71,7 +72,7 @@ class CartController extends Controller
             $cartItem->save();
         }
     }
-        
+
     public function getCartList(Request $request) {
         $cart = Cart::where([
                 ['user_id', '=', Auth::id()],
@@ -111,7 +112,7 @@ class CartController extends Controller
         $departments = Department::all();
         return view('main.product_display', compact('product', 'departments'));
     }
-    
+
     public function checkoutForm() {
         $cart = Cart::where([
                 ['user_id', '=', Auth::id()],
@@ -133,7 +134,7 @@ class CartController extends Controller
         $checkout->address = $request->input('address');
         $checkout->phone_no = $request->input('phone_no');
         $checkout->cart_id = $request->input('cart_id');
-        
+
         $cart = Cart::find($request->input('cart_id'));
         $cart->checkout = 1;
 
@@ -142,7 +143,8 @@ class CartController extends Controller
         } else {
             $checkout->save();
             $cart->save();
-            return redirect('/')->with('status', 'Your order is being processed!!');
+            Alert::success('Thank you', 'Your order is being processed');
+            return redirect('/');
         }
     }
 }

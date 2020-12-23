@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png')}}">
 
 
+
     <!-- Customizable CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/colors/green.css">
@@ -64,7 +65,7 @@
     </div>
 
     @include('inc.navbar')
-
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
     <!-- Cart Message -->
     <div id="cart-message" class="center">
         <strong>Added to Cart</strong>

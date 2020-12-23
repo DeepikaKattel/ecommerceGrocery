@@ -3,8 +3,8 @@
 namespace App\Imports;
 
 use App\ExcelProduct;
-use App\Product;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
 class ProductsImport implements ToModel
 {
@@ -13,14 +13,19 @@ class ProductsImport implements ToModel
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function model(array $row)
+
+    public function startRow(): int
+    {
+        return 6;
+    }
+    public function model(array $col)
     {
         return new ExcelProduct([
-            'id'     => $row[0],
-            'name'    => $row[2],
-            'category'    => $row[1],
-            'quantity' => $row[3],
-            'rate' => $row[4]
+            'id'     => $col[0],
+            'name'    => $col[1],
+            'category'    => $col[2],
+            'quantity' => $col[3],
+            'rate' => $col[4]
         ]);
     }
 }
