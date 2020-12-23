@@ -15,15 +15,15 @@ class IndexController extends Controller
     public function index() {
         $featured_products = Product::where('featured', '=', 1)
                 ->orderBy('created_at', 'desc')
-                ->take(4)
+                ->take(10)
                 ->get();
         $new_arrival = Product::where('new_arrival', '=', 1)
                 ->orderBy('created_at', 'desc')
-                ->take(4)
+                ->take(10)
                 ->get();
         $top_sales = Product::where('top_sales', '=', 1)
                 ->orderBy('created_at', 'desc')
-                ->take(4)
+                ->take(10)
                 ->get();
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         return view('main.index', [
@@ -36,15 +36,15 @@ class IndexController extends Controller
     public function home() {
         $featured_products = Product::where('featured', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         $new_arrival = Product::where('new_arrival', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         $top_sales = Product::where('top_sales', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         return view('main.home', [
             'featured' => $featured_products,
@@ -71,15 +71,15 @@ class IndexController extends Controller
     public function carousel() {
         $featured_products = Product::where('featured', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         $new_arrival = Product::where('new_arrival', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         $top_sales = Product::where('top_sales', '=', 1)
             ->orderBy('created_at', 'desc')
-            ->take(4)
+            ->take(10)
             ->get();
         return view('carousel', [
             'featured' => $featured_products,

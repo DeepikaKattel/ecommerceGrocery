@@ -9,55 +9,101 @@
         background-color: #f7f7f7;
     }
     .brand{
-        font-size: 9px;
+        font-size: 10px;
         color: #3D3D3D;
     }
     .price-prev del{
         font-size: 11px;
         color: #3D3D3D;
     }
+    .price-current{
+        font-size: 12px;
+    }
+    .item{
+        position: relative;
+        height: 210px;
+        width: 180px;
+        justify-content: center;
+    }
     .item img{
-        height:150px;
-        width:150px;
+        height:90px;
+        width:140px;
     }
-    @media(max-width:560px){
-        .title a{
-            font-size: 10px;
-        }
-        .badge{
-            font-size: 5px;
-        }
-        .price-current{
-            font-size: 10px;
-        }
-        .le-button{
-            font-size: 5px;
-            padding:5px 5px;
-            line-height: 5px;
-        }
-        .item img{
-            height:50px;
-            width:50px;
-        }
+    .badge{
+        font-size: 8px;
     }
+
+    .add-cart-button{
+        position: absolute;
+        top: 0;
+        padding-top: 50%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(78, 154, 11, 0.52);
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+
+        /* transition effect. not necessary */
+        transition: opacity .2s, visibility .2s;
+    }
+    .item:hover .add-cart-button{
+        visibility: visible;
+        opacity: 1;
+    }
+    /*@media(max-width:560px){*/
+    /*    .title a{*/
+    /*        font-size: 10px;*/
+    /*    }*/
+
+    /*    .brand{*/
+    /*        font-size: 20px;*/
+    /*        color: #3D3D3D;*/
+    /*    }*/
+    /*    .price-prev del{*/
+    /*        font-size: 5px;*/
+    /*        color: #3D3D3D;*/
+    /*    }*/
+    /*    .badge{*/
+    /*        font-size: 4px;*/
+    /*    }*/
+    /*    .price-current{*/
+    /*        font-size: 7px;*/
+    /*    }*/
+    /*    .le-button{*/
+    /*        font-size: 5px;*/
+    /*        padding:5px 5px;*/
+    /*        line-height: 5px;*/
+    /*    }*/
+    /*    .item img{*/
+    /*        height:50px;*/
+    /*        width:70px;*/
+    /*    }*/
+    /*    .container-slider{*/
+    /*        max-width:500px;*/
+    /*        margin: 10px auto;*/
+    /*    }*/
+
+    /*}*/
     .container-slider{
-        max-width:1200px;
-        margin: 100px auto;
+        max-width:1100px;
+        margin: 100px auto -70px auto;
     }
     h1{
-        font-size:30px;
+        font-size:20px;
         font-weight:500;
         text-align: center;
         position:relative;
-        margin-bottom:60px;
+        margin-bottom:20px;
     }
     h1:after{
         content:'';
         position:absolute;
-        width:100px;
-        height:4px;
+        width:120px;
+        height:2px;
         background-color: #ff8159;
-        bottom:-20px;
+        bottom:-10px;
         left:0;
         right:0;
         margin:0 auto;
@@ -71,7 +117,8 @@
 
     }
     .logo-slider .slick-slide{
-        margin:15px;
+        margin:5px;
+
     }
     .slick-dots li.slick-active button:before{
         color:#ff5722;
@@ -84,11 +131,7 @@
         color:#ff8159;
         font-size: 24px;
     }
-    .item:hover{
-        display:block;
-        transition: all ease 0.3s;
-        transform:scale(1.05) translateY(-0.5px);
-    }
+
 
 /*    .......categories..................*/
 
@@ -398,57 +441,47 @@
         <div class="logo-slider">
             @foreach ($featured as $f)
             <div class="item">
-                <div class="col-lg-6">
-                    <a href="#">
-                        <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="body center">
-                       <div class="title">
-                           <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
-                       </div>
-                       <div class="brand">{{$f->brand}}</div>
-                       <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
+                <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                <div class="body center">
+                   <div class="title">
+                       <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
                    </div>
-                   <div class="prices center">
-                       <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
-                       <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
-                   </div>
-                   <div class="add-cart-button center inner-xxs">
-                       <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
-                   </div>
-                </div>
+                   <div class="brand">{{$f->brand}}</div>
+                   <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
+               </div>
+               <div class="prices center">
+                   <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                   <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
+               </div>
+               <div class="add-cart-button center inner-xxs">
+                   <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+               </div>
+
             </div>
             @endforeach
         </div>
     </div>
     <div class="container-slider">
-        <h1>New Arrival</h1>
+        <h1>New Arrivals</h1>
         <div class="logo-slider">
             @foreach ($new_arrival as $f)
                 <div class="item">
-                    <div class="col-lg-6">
-                        <a href="#">
-                            <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
-                        </a>
+                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                    <div class="body center">
+                        <div class="title">
+                            <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
+                        </div>
+                        <div class="brand">{{$f->brand}}</div>
+                        <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="body center">
-                            <div class="title">
-                                <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
-                            </div>
-                            <div class="brand">{{$f->brand}}</div>
-                            <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
-                        </div>
-                        <div class="prices center">
-                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
-                            <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
-                        </div>
-                        <div class="add-cart-button center inner-xxs">
-                            <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
-                        </div>
+                    <div class="prices center">
+                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
+                    <div class="add-cart-button center inner-xxs">
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+                    </div>
+
                 </div>
             @endforeach
         </div>
@@ -458,27 +491,22 @@
         <div class="logo-slider">
             @foreach ($top_sales as $f)
                 <div class="item">
-                    <div class="col-lg-3">
-                        <a href="#">
-                            <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
-                        </a>
+                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                    <div class="body center">
+                        <div class="title">
+                            <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
+                        </div>
+                        <div class="brand">{{$f->brand}}</div>
+                        <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="body center">
-                            <div class="title">
-                                <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
-                            </div>
-                            <div class="brand">{{$f->brand}}</div>
-                            <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
-                        </div>
-                        <div class="prices center">
-                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
-                            <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
-                        </div>
-                        <div class="add-cart-button center inner-xxs">
-                            <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
-                        </div>
+                    <div class="prices center">
+                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
+                    <div class="add-cart-button center inner-xxs">
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+                    </div>
+
                 </div>
             @endforeach
         </div>
@@ -488,13 +516,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
     $('.logo-slider').slick({
-        slidesToShow:3,
+        slidesToShow:6,
         slidesToScroll:1,
-        dots:true,
-        arrows:true,
+        dots:false,
+        arrows:false,
         autoplay:true,
         autoplaySpeed:2000,
-        infinite: true
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 </script>
 @endsection
