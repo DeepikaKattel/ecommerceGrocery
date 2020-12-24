@@ -1,4 +1,4 @@
-<footer>
+<footer style="margin-top: 100px">
         <div class="footer-main">
             <div class="container">
                 <div class="row">

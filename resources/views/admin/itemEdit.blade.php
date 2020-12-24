@@ -24,39 +24,39 @@
             @csrf
             <div class="form-group">
                 <label for="name">Product Name:</label>
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" value="{{old('name', $items->name)}}">
             </div>
             <div class="form-group">
                 <label for="brand">Brand:</label>
-                <input type="text" class="form-control" name="brand">
+                <input type="text" class="form-control" name="brand" value="{{old('brand', $items->brand)}}">
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" name="description" rows="5"></textarea>
+                <textarea class="form-control" name="description" rows="5">{{old('description', $items->description)}}</textarea>
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity:</label>
-                <input type="number" class="form-control" name="quantity">
+                <input type="number" class="form-control" name="quantity" value="{{old('quantity', $items->quantity)}}">
             </div>
             <div class="form-group">
                 <label for="rate">Rate:</label>
-                <input type="number" class="form-control" name="rate">
+                <input type="number" class="form-control" name="rate" value="{{old('rate', $items->rate)}}">
             </div>
             <div class="form-group">
                 <label for="prev_price">Previous Price:</label>
-                <input type="number" class="form-control" name="prev_price">
+                <input type="number" class="form-control" name="prev_price" value="{{old('prev_price', $items->prev_price)}}">
             </div>
             <div class="form-group">
                 <label for="sku">SKU:</label>
-                <input type="text" class="form-control" name="sku">
+                <input type="text" class="form-control" name="sku" value="{{old('sku', $items->sku)}}">
             </div>
             <div class="form-group">
                 <label for="image">Image:</label><br>
-                <input type="file" name="image">
+                <input type="file" name="image" value="{{old('image', $items->image)}}">
             </div>
             <div class="form-group">
                 <label for="tags">Tags:</label>
-                <input type="text" class="form-control" name="tags">
+                <input type="text" class="form-control" name="tags" value="{{old('tags', $items->tags)}}">
             </div>
              <div class="form-group">
                 <label for="availability">Availability:</label>
@@ -65,16 +65,16 @@
                     <option value="Out Of Stock">Out of Stock</option>
                 </select>
             </div>
-            @if (Auth::user()->isAdmin())
-                <div class="form-group">
-                    <label for="dept_id">Vendor:</label>
-                    <select class="form-control" name="vendor_id">
-                        @foreach ($vendors as $vendor)
-                            <option value="{{$vendor->id}}">{{$vendor->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            @endif
+{{--            @if (Auth::user()->isAdmin())--}}
+{{--                <div class="form-group">--}}
+{{--                    <label for="dept_id">Vendor:</label>--}}
+{{--                    <select class="form-control" name="vendor_id">--}}
+{{--                        @foreach ($vendors as $vendor)--}}
+{{--                            <option value="{{$vendor->id}}">{{$vendor->name}}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--            @endif--}}
             <label for="product_type">Product Type:</label>
             <div class="form-check">
                 <div>

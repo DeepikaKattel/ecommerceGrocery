@@ -24,7 +24,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Department Name:</label>
-                <input type="text" class="form-control" name="department_name">
+                <input type="text" class="form-control" name="department_name" value="{{old('department_name', $department->department_name)}}">
             </div>
 
             <input class="form-control btn btn-primary mb-4" type="submit" value="Submit">

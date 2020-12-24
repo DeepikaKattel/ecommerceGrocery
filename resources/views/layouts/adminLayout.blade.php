@@ -111,12 +111,12 @@
             </ul>
         </li>
         @if (Auth::user()->isAdmin())
-        <li class="nav-item">
-            <a href="/admin/vendor" class="nav-link">
-                <i class="fas fa-store nav-icon"></i>
-                <p>Vendors</p>
-            </a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a href="/admin/vendor" class="nav-link">--}}
+{{--                <i class="fas fa-store nav-icon"></i>--}}
+{{--                <p>Vendors</p>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li class="nav-item">
             <a href="" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>

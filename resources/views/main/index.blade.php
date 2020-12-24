@@ -21,7 +21,7 @@
     }
     .item{
         position: relative;
-        height: 210px;
+        height: 245px;
         width: 180px;
         justify-content: center;
     }
@@ -35,8 +35,8 @@
 
     .add-cart-button{
         position: absolute;
-        top: 0;
-        padding-top: 50%;
+        top: 50%;
+        padding-top: 20%;
         bottom: 0;
         left: 0;
         right: 0;
@@ -44,7 +44,6 @@
         color: #fff;
         visibility: hidden;
         opacity: 0;
-
         /* transition effect. not necessary */
         transition: opacity .2s, visibility .2s;
     }
@@ -52,40 +51,40 @@
         visibility: visible;
         opacity: 1;
     }
-    /*@media(max-width:560px){*/
-    /*    .title a{*/
-    /*        font-size: 10px;*/
-    /*    }*/
+    @media(max-width:560px){
+        .title a{
+            font-size: 9px;
+        }
 
-    /*    .brand{*/
-    /*        font-size: 20px;*/
-    /*        color: #3D3D3D;*/
-    /*    }*/
-    /*    .price-prev del{*/
-    /*        font-size: 5px;*/
-    /*        color: #3D3D3D;*/
-    /*    }*/
-    /*    .badge{*/
-    /*        font-size: 4px;*/
-    /*    }*/
-    /*    .price-current{*/
-    /*        font-size: 7px;*/
-    /*    }*/
-    /*    .le-button{*/
-    /*        font-size: 5px;*/
-    /*        padding:5px 5px;*/
-    /*        line-height: 5px;*/
-    /*    }*/
-    /*    .item img{*/
-    /*        height:50px;*/
-    /*        width:70px;*/
-    /*    }*/
-    /*    .container-slider{*/
-    /*        max-width:500px;*/
-    /*        margin: 10px auto;*/
-    /*    }*/
+        .brand{
+            font-size: 8px;
+            color: #3D3D3D;
+        }
+        /*.price-prev del{*/
+        /*    font-size: 5px;*/
+        /*    color: #3D3D3D;*/
+        /*}*/
+        /*.badge{*/
+        /*    font-size: 4px;*/
+        /*}*/
+        /*.price-current{*/
+        /*    font-size: 7px;*/
+        /*}*/
+        /*.le-button{*/
+        /*    font-size: 5px;*/
+        /*    padding:5px 5px;*/
+        /*    line-height: 5px;*/
+        /*}*/
+        /*.item img{*/
+        /*    height:50px;*/
+        /*    width:70px;*/
+        /*}*/
+        /*.container-slider{*/
+        /*    max-width:500px;*/
+        /*    margin: 10px auto;*/
+        /*}*/
 
-    /*}*/
+    }
     .container-slider{
         max-width:1100px;
         margin: 100px auto -70px auto;
@@ -126,11 +125,20 @@
     .slick-dots li button.before{
         font-size:12px;
     }
+    .slick-prev:before {
+        font-family: "FontAwesome";
+        content: '\f100';
+    }
+    .slick-next:before {
+        font-family: "FontAwesome";
+        content: '\f101';
+    }
     .slick-next:before,
     .slick-prev:before{
-        color:#ff8159;
+        color: rgba(0, 0, 0, 0.2);
         font-size: 24px;
     }
+
 
 
 /*    .......categories..................*/
@@ -230,7 +238,7 @@
 
         <!-- ================================== TOP NAVIGATION : END ================================== -->
 
-    <div class="row slider mx-5">
+    <div class="row slider mx-5" style="margin-bottom: -50px">
         <div id="slides-shop" class="cover-slides col-md-12 mt-5" >
             <ul class="slides-container">
                 @foreach($frontEnd as $front)
@@ -519,7 +527,7 @@
         slidesToShow:6,
         slidesToScroll:1,
         dots:false,
-        arrows:false,
+        arrows:true,
         autoplay:true,
         autoplaySpeed:2000,
         infinite: true,

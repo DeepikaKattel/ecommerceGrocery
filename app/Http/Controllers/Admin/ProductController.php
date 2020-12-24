@@ -62,11 +62,11 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
-        if (Auth::user()->isAdmin()) {
-            $product->vendor_id = $request->input('vendor_id');
-        } else {
-            $product->vendor_id = Auth::user()->vendor_id;
-        }
+//        if (Auth::user()->isAdmin()) {
+//            $product->vendor_id = $request->input('vendor_id');
+//        } else {
+//            $product->vendor_id = Auth::user()->vendor_id;
+//        }
         $product->description = $request->input('description');
         $product->quantity = $request->input('quantity');
         $product->rate = $request->input('rate');
@@ -104,11 +104,11 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
-        if (Auth::user()->isAdmin()) {
-            $product->vendor_id = $request->input('vendor_id');
-        } else {
-            $product->vendor_id = Auth::user()->vendor_id;
-        }
+//        if (Auth::user()->isAdmin()) {
+//            $product->vendor_id = $request->input('vendor_id');
+//        } else {
+//            $product->vendor_id = Auth::user()->vendor_id;
+//        }
         $product->description = $request->input('description');
         $product->quantity = $request->input('quantity');
         $product->rate = $request->input('rate');
