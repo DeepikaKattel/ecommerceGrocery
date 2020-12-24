@@ -317,7 +317,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
         return rowStructs;
     };
     // Given a row # and an array of segments all in the same row, render a <tbody> element, a skeleton that contains
-    // the segments. Returns object with a bunch of internal data about how the render was calculated.
+    // the segments. Returns object with a bunch of internal data aboutUs how the render was calculated.
     // NOTE: modifies rowSegs
     DayGridEventRenderer.prototype.renderSegRow = function (row, rowSegs) {
         var isRtl = this.context.isRtl;
@@ -561,14 +561,14 @@ var DayGridFillRenderer = /** @class */ (function (_super) {
             '</div>');
         trEl = skeletonEl.getElementsByTagName('tr')[0];
         if (startCol > 0) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (startCol + 1) td's
             new Array(startCol + 1).join(EMPTY_CELL_HTML));
         }
         seg.el.colSpan = endCol - startCol;
         trEl.appendChild(seg.el);
         if (endCol < colCnt) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (colCnt - endCol) td's
             new Array(colCnt - endCol + 1).join(EMPTY_CELL_HTML));
         }

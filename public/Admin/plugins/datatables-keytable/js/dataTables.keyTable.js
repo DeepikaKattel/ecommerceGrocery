@@ -80,7 +80,7 @@ var KeyTable = function ( dt, opts ) {
 		  */
 		waitingForDraw: false,
 
-		/** @type {object} Information about the last cell that was focused */
+		/** @type {object} Information aboutUs the last cell that was focused */
 		lastFocus: null,
 
 		/** @type {string} Unique namespace per instance */
@@ -649,7 +649,7 @@ $.extend( KeyTable.prototype, {
 				.rows( { filter: 'applied', order: 'applied' } )
 				.indexes()
 				.indexOf( index.row );
-			
+
 			// Don't focus rows that were filtered out.
 			if ( row < 0 ) {
 				return;

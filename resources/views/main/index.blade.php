@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet">
+
 <style>
 
     body{
@@ -88,6 +87,22 @@
     .container-slider{
         max-width:1100px;
         margin: 100px auto -70px auto;
+    }
+    .imageBanner{
+        position:relative;
+        padding-top:20px;
+        display:inline-block;
+    }
+    .notify-badge{
+        position: absolute;
+        right:20px;
+        top:10px;
+        background:red;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color:white;
+        padding:5px 10px;
+        font-size:20px;
     }
     h1{
         font-size:20px;
@@ -519,29 +534,18 @@
             @endforeach
         </div>
     </div>
+    <div class="row mx-2" style="margin-top: 100px;margin-bottom: -50px">
+        <div class="imageBanner col-lg-9 col-12">
+            <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner1}}"/>
+            <span class="badge badge-danger notify-badge">{{$banner->discount1}}</span>
+        </div>
+        <div class="imageBanner col-lg-3 col-12">
+            <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner2}}"/>
+            <span class="badge badge-danger notify-badge">{{$banner->discount2}}</span>
+        </div>
+    </div>
     </div><!-- /.wrapper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    $('.logo-slider').slick({
-        slidesToShow:6,
-        slidesToScroll:1,
-        dots:false,
-        arrows:true,
-        autoplay:true,
-        autoplaySpeed:2000,
-        infinite: true,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-</script>
+
+
 @endsection
 

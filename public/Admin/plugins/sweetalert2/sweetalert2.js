@@ -249,7 +249,7 @@
     }
   };
   /**
-   * Show a one-time console warning about deprecated params/methods
+   * Show a one-time console warning aboutUs deprecated params/methods
    */
 
   var warnAboutDepreation = function warnAboutDepreation(deprecatedParam, useInstead) {

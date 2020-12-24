@@ -13,7 +13,7 @@
                                 <i class="fa fa-list"></i> shop by department
                             </a>
                             <ul class="dropdown-menu" id="departmentList">
-                            
+
                             </ul>
                         </li>
 
@@ -38,7 +38,7 @@
         <div class="container inner-bottom-sm">
             <div class="section">
                 <h1 class="border">{{Auth::user()->name}}</h1>
-                
+
                 <h3 class="outer-top-xs">Your checkouts:</h3>
                 <table class="table">
                     <thead>
@@ -88,13 +88,13 @@
                                     <td>{{$cart->getCheckout->status}}</td>
                                     <td>{{$cart->getCheckout->created_at}}</td>
                                 @endif
-                            </tr>    
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-    </main><!-- /#about-us -->
+    </main><!-- /#aboutUs-us -->
     <!-- ========================================= MAIN : END ========================================= -->
 </div><!-- /.wrapper -->
 @endsection

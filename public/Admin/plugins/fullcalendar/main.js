@@ -4398,7 +4398,7 @@ Docs & License: https://fullcalendar.io/
         var endMarker = framingRange.end;
         var instanceStarts = [];
         while (dayMarker < endMarker) {
-            var instanceStart 
+            var instanceStart
             // if everyday, or this particular day-of-week
             = void 0;
             // if everyday, or this particular day-of-week
@@ -5263,14 +5263,14 @@ Docs & License: https://fullcalendar.io/
         }
         /* Date Range Computation
         ------------------------------------------------------------------------------------------------------------------*/
-        // Builds a structure with info about what the dates/ranges will be for the "prev" view.
+        // Builds a structure with info aboutUs what the dates/ranges will be for the "prev" view.
         DateProfileGenerator.prototype.buildPrev = function (currentDateProfile, currentDate) {
             var dateEnv = this.dateEnv;
             var prevDate = dateEnv.subtract(dateEnv.startOf(currentDate, currentDateProfile.currentRangeUnit), // important for start-of-month
             currentDateProfile.dateIncrement);
             return this.build(prevDate, -1);
         };
-        // Builds a structure with info about what the dates/ranges will be for the "next" view.
+        // Builds a structure with info aboutUs what the dates/ranges will be for the "next" view.
         DateProfileGenerator.prototype.buildNext = function (currentDateProfile, currentDate) {
             var dateEnv = this.dateEnv;
             var nextDate = dateEnv.add(dateEnv.startOf(currentDate, currentDateProfile.currentRangeUnit), // important for start-of-month
@@ -5343,7 +5343,7 @@ Docs & License: https://fullcalendar.io/
             return this.getRangeOption('validRange', this.calendar.getNow()) ||
                 { start: null, end: null }; // completely open-ended
         };
-        // Builds a structure with info about the "current" range, the range that is
+        // Builds a structure with info aboutUs the "current" range, the range that is
         // highlighted as being the current month for example.
         // See build() for a description of `direction`.
         // Guaranteed to have `range` and `unit` properties. `duration` is optional.
@@ -6997,7 +6997,7 @@ Docs & License: https://fullcalendar.io/
         };
         // View
         // -----------------------------------------------------------------------------------------------------------------
-        // Returns a boolean about whether the view is okay to instantiate at some point
+        // Returns a boolean aboutUs whether the view is okay to instantiate at some point
         Calendar.prototype.isValidViewType = function (viewType) {
             return Boolean(this.viewSpecs[viewType]);
         };
@@ -7118,7 +7118,7 @@ Docs & License: https://fullcalendar.io/
         };
         Calendar.prototype.incrementDate = function (deltaInput) {
             var delta = createDuration(deltaInput);
-            if (delta) { // else, warn about invalid input?
+            if (delta) { // else, warn aboutUs invalid input?
                 this.unselect();
                 this.dispatch({
                     type: 'SET_DATE',

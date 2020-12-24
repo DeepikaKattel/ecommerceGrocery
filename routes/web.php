@@ -60,6 +60,12 @@ Route::get('/contact/destroy/{id}', 'ContactUsController@destroy')->name('c.dest
 Route::resource('/frontend', 'Admin\FrontendController');
 Route::get('/frontend/destroy/{id}', 'Admin\FrontendController@destroy')->name('f.destroy');
 
+Route::resource('/aboutUs', 'Admin\AboutUsController');
+Route::get('/aboutUs/destroy/{id}', 'Admin\AboutUsController@destroy')->name('a.destroy');
+
+Route::resource('/banner', 'BannerController');
+Route::get('/banner/destroy/{id}', 'BannerController@destroy')->name('b.destroy');
+
 Route::get('/admin/vendor', 'Admin\VendorController@vendorList');
 Route::post('/admin/vendor', 'Admin\VendorController@addVendor');
 Route::delete('/admin/vendor/remove/{vendorId}','Admin\VendorController@deleteVendor');

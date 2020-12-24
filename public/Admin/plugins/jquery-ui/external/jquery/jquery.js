@@ -4685,7 +4685,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	}
 
 	// Reset defaultChecked for any radios and checkboxes
-	// about to be appended to the DOM in IE 6/7 (#8060)
+	// aboutUs to be appended to the DOM in IE 6/7 (#8060)
 	if ( !support.appendChecked ) {
 		jQuery.grep( getAll( nodes, "input" ), fixDefaultChecked );
 	}

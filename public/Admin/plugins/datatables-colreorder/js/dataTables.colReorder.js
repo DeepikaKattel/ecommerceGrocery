@@ -941,7 +941,7 @@ $.extend( ColReorder.prototype, {
 	{
 		var that = this;
 
-		/* Store information about the mouse position */
+		/* Store information aboutUs the mouse position */
 		var target = $(e.target).closest('th, td');
 		var offset = target.offset();
 		var idx = parseInt( $(nTh).attr('data-column-index'), 10 );

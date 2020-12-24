@@ -376,7 +376,7 @@ var requirejs, require, define;
             }
         } else if (name) {
             //May just be an object definition for the module. Only
-            //worry about defining if have a module name.
+            //worry aboutUs defining if have a module name.
             defined[name] = callback;
         }
     };

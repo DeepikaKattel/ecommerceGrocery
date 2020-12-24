@@ -65,7 +65,7 @@ function migrateWarnProp( obj, prop, value, msg ) {
 			});
 			return;
 		} catch( err ) {
-			// IE8 is a dope about Object.defineProperty, can't warn there
+			// IE8 is a dope aboutUs Object.defineProperty, can't warn there
 		}
 	}
 

@@ -52,7 +52,7 @@ var DataTable = $.fn.dataTable;
 
 var _instance = 0;
 
-/** 
+/**
  * AutoFill provides Excel like auto-fill features for a DataTable
  *
  * @class AutoFill
@@ -271,7 +271,7 @@ $.extend( AutoFill.prototype, {
 	 * Determine can the fill type should be. This can be automatic, or ask the
 	 * end user.
 	 *
-	 * @param {array} cells Information about the selected cells from the key
+	 * @param {array} cells Information aboutUs the selected cells from the key
 	 *     up function
 	 * @private
 	 */
@@ -425,7 +425,7 @@ $.extend( AutoFill.prototype, {
 	 * Use the Editor API to perform an update based on the new data for the
 	 * cells
 	 *
-	 * @param {array} cells Information about the selected cells from the key
+	 * @param {array} cells Information aboutUs the selected cells from the key
 	 *     up function
 	 * @private
 	 */
@@ -681,7 +681,7 @@ $.extend( AutoFill.prototype, {
 	 * @private
 	 */
 	_mousemove: function ( e )
-	{	
+	{
 		var that = this;
 		var dt = this.s.dt;
 		var name = e.target.nodeName.toLowerCase();
@@ -787,7 +787,7 @@ $.extend( AutoFill.prototype, {
 		}
 
 		this._actionSelector( selected );
-		
+
 		// Stop shiftScroll
 		clearInterval( this.s.scrollInterval );
 		this.s.scrollInterval = null;
@@ -797,7 +797,7 @@ $.extend( AutoFill.prototype, {
 	/**
 	 * Create an array with a range of numbers defined by the start and end
 	 * parameters passed in (inclusive!).
-	 * 
+	 *
 	 * @param  {integer} start Start
 	 * @param  {integer} end   End
 	 * @private
@@ -904,7 +904,7 @@ $.extend( AutoFill.prototype, {
 		// interval (if there is an existing one, it will continue to run)
 		if ( ! this.s.scrollInterval && runInterval ) {
 			this.s.scrollInterval = setInterval( function () {
-				// Don't need to worry about setting scroll <0 or beyond the
+				// Don't need to worry aboutUs setting scroll <0 or beyond the
 				// scroll bound as the browser will just reject that.
 				if ( scroll.windowVert ) {
 					document.body.scrollTop += scroll.windowVert;
@@ -935,7 +935,7 @@ $.extend( AutoFill.prototype, {
 	 * @param  {false|undefined} result Return from the `execute` method - can
 	 *   be false internally to do nothing. This is not documented for plug-ins
 	 *   and is used only by the cancel option.
-	 * @param {array} cells Information about the selected cells from the key
+	 * @param {array} cells Information aboutUs the selected cells from the key
 	 *     up function, argumented with the set values
 	 * @private
 	 */
@@ -1098,7 +1098,7 @@ AutoFill.actions = {
 
 /**
  * AutoFill version
- * 
+ *
  * @static
  * @type      String
  */
@@ -1107,7 +1107,7 @@ AutoFill.version = '2.3.4';
 
 /**
  * AutoFill defaults
- * 
+ *
  * @namespace
  */
 AutoFill.defaults = {
@@ -1139,7 +1139,7 @@ AutoFill.defaults = {
 
 /**
  * Classes used by AutoFill that are configurable
- * 
+ *
  * @namespace
  */
 AutoFill.classes = {

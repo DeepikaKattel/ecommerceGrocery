@@ -41,6 +41,9 @@
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet">
+
 
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
@@ -119,5 +122,29 @@
     <script src="{{asset('js/form-validator.min.js')}}"></script>
     <script src="{{asset('js/contact-form-script.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $('.logo-slider').slick({
+            slidesToShow:6,
+            slidesToScroll:1,
+            dots:false,
+            arrows:true,
+            autoplay:true,
+            autoplaySpeed:2000,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+    </script>
 </body>
 </html>

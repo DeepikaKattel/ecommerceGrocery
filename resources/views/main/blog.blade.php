@@ -147,7 +147,7 @@
 {{--                        </div><!-- /.format-wrapper -->--}}
 {{--                        <div class="post-content">--}}
 {{--                            <blockquote>--}}
-{{--                                <p>Been putting off creating my electronics store for several years, then I found Media Center and about 30 minutes later ... I have an awesome looking electronics store. Totally love it – keep up the good work!</p>--}}
+{{--                                <p>Been putting off creating my electronics store for several years, then I found Media Center and aboutUs 30 minutes later ... I have an awesome looking electronics store. Totally love it – keep up the good work!</p>--}}
 {{--                                <footer><cite>Bill Jobs</cite></footer>--}}
 {{--                            </blockquote>--}}
 {{--                        </div><!-- /.post-content -->--}}

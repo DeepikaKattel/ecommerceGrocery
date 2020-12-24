@@ -484,7 +484,7 @@ var generateDosExternalFileAttr = function (dosPermissions, isDir) {
 
 /**
  * Generate the various parts used in the construction of the final zip file.
- * @param {Object} streamInfo the hash with information about the compressed file.
+ * @param {Object} streamInfo the hash with information aboutUs the compressed file.
  * @param {Boolean} streamedContent is the content streamed ?
  * @param {Boolean} streamingEnded is the stream finished ?
  * @param {number} offset the current offset from the start of the zip file.
@@ -2255,7 +2255,7 @@ module.exports = DataWorker;
 function GenericWorker(name) {
     // the name of the worker
     this.name = name || "default";
-    // an object containing metadata about the workers chain
+    // an object containing metadata aboutUs the workers chain
     this.streamInfo = {};
     // an error which happened when the worker was paused
     this.generatedError = null;
@@ -3459,8 +3459,8 @@ exports.prepareContent = function(name, inputData, isBinary, isOptimizedBinarySt
 
     // if inputData is already a promise, this flatten it.
     var promise = external.Promise.resolve(inputData).then(function(data) {
-        
-        
+
+
         var isBlob = support.blob && (data instanceof Blob || ['[object File]', '[object Blob]'].indexOf(Object.prototype.toString.call(data)) !== -1);
 
         if (isBlob && typeof FileReader !== "undefined") {
@@ -5085,7 +5085,7 @@ function Inflate(options) {
     opt.windowBits += 32;
   }
 
-  // Gzip header has no info about windows size, we can do autodetect only
+  // Gzip header has no info aboutUs windows size, we can do autodetect only
   // for deflate. So, if window size not set, force it to max when gzip possible
   if ((opt.windowBits > 15) && (opt.windowBits < 48)) {
     // bit 3 (16) -> gzipped data
@@ -6246,7 +6246,7 @@ function fill_window(s) {
        at the expense of memory usage). We slide even when level == 0
        to keep the hash table consistent if we switch back to level > 0
        later. (Using level 0 permanently is not an optimal usage of
-       zlib, so we don't care about this pathological case.)
+       zlib, so we don't care aboutUs this pathological case.)
        */
 
       n = s.hash_size;
@@ -8428,7 +8428,7 @@ function inflateInit(strm) {
  fixed code decoding.  Normally this returns fixed tables from inffixed.h.
  If BUILDFIXED is defined, then instead this routine builds the tables the
  first time it's called, and returns those tables the first time and
- thereafter.  This reduces the size of the code by about 2K bytes, in
+ thereafter.  This reduces the size of the code by aboutUs 2K bytes, in
  exchange for a little execution time.  However, BUILDFIXED should not be
  used for threaded applications, since the rewriting of the tables and virgin
  may not be thread-safe.
@@ -11346,7 +11346,7 @@ function ZStream() {
   this.msg = ''/*Z_NULL*/;
   /* not visible by applications */
   this.state = null;
-  /* best guess about the data type: binary or text */
+  /* best guess aboutUs the data type: binary or text */
   this.data_type = 2/*Z_UNKNOWN*/;
   /* adler32 value of the uncompressed data */
   this.adler = 0;

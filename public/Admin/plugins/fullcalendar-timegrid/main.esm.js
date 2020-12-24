@@ -596,7 +596,7 @@ var TimeGrid = /** @class */ (function (_super) {
         var dayStart = startOfDay(dateProfile.renderRange.start);
         var slotTime = dateProfile.minTime;
         var slotIterator = createDuration(0);
-        var slotDate; // will be on the view's first day, but we only care about its time
+        var slotDate; // will be on the view's first day, but we only care aboutUs its time
         var isLabeled;
         var axisHtml;
         // Calculate the time for each slot

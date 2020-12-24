@@ -186,6 +186,52 @@
                   </li>
               </ul>
           </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    About Us
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('aboutUs.create')}}" class="nav-link">
+                        <i class="fas fa-plus nav-icon"></i>
+                        <p>Add Content</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('aboutUs.index')}}" class="nav-link">
+                        <i class="fas fa-list nav-icon"></i>
+                        <p>List Content</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Banners
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('banner.create')}}" class="nav-link">
+                        <i class="fas fa-plus nav-icon"></i>
+                        <p>Add Content</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('banner.index')}}" class="nav-link">
+                        <i class="fas fa-list nav-icon"></i>
+                        <p>List Content</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
           <li class="nav-item">
             <a href="" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>

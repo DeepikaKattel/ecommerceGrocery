@@ -1528,7 +1528,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -3097,7 +3097,7 @@ var helpers_options = {
 	 * is called with `context` as first argument and the result becomes the new input.
 	 * @param {number} [index] - If defined and the current value is an array, the value
 	 * at `index` become the new input.
-	 * @param {object} [info] - object to return information about resolution in
+	 * @param {object} [info] - object to return information aboutUs resolution in
 	 * @param {boolean} [info.cacheable] - Will be set to `false` if option is not cacheable.
 	 * @since 2.7.0
 	 */
@@ -9419,7 +9419,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		helpers$1.retinaScale(me, options.devicePixelRatio);
 
 		if (!silent) {
-			// Notify any plugins about the resize
+			// Notify any plugins aboutUs the resize
 			var newSize = {width: newWidth, height: newHeight};
 			core_plugins.notify(me, 'resize', [newSize]);
 
@@ -10401,7 +10401,7 @@ var core_helpers = function() {
 		return p;
 	};
 
-	// Gets the angle from vertical upright to the point about a centre.
+	// Gets the angle from vertical upright to the point aboutUs a centre.
 	helpers$1.getAngleFromPoint = function(centrePoint, anglePoint) {
 		var distanceFromXCenter = anglePoint.x - centrePoint.x;
 		var distanceFromYCenter = anglePoint.y - centrePoint.y;

@@ -567,7 +567,7 @@ Docs & License: https://fullcalendar.io/
     }(ScrollGeomCache));
 
     // If available we are using native "performance" API instead of "Date"
-    // Read more about it on MDN:
+    // Read more aboutUs it on MDN:
     // https://developer.mozilla.org/en-US/docs/Web/API/Performance
     var getTime = typeof performance === 'function' ? performance.now : Date.now;
     /*
@@ -772,7 +772,7 @@ Docs & License: https://fullcalendar.io/
                     core.preventContextMenu(document.body);
                     // prevent links from being visited if there's an eventual drag.
                     // also prevents selection in older browsers (maybe?).
-                    // not necessary for touch, besides, browser would complain about passiveness.
+                    // not necessary for touch, besides, browser would complain aboutUs passiveness.
                     if (!ev.isTouch) {
                         ev.origEvent.preventDefault();
                     }
@@ -1807,7 +1807,7 @@ Docs & License: https://fullcalendar.io/
             documentPointer.shouldWatchScroll = false;
             documentPointer.emitter.on('pointerup', this.onDocumentPointerUp);
             /*
-            TODO: better way to know about whether there was a selection with the pointer
+            TODO: better way to know aboutUs whether there was a selection with the pointer
             */
             calendar.on('select', this.onSelect);
         }

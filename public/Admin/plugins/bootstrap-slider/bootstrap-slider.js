@@ -1,5 +1,5 @@
 /*! =======================================================
-                      VERSION  10.6.2              
+                      VERSION  10.6.2
 ========================================================= */
 "use strict";
 
@@ -333,7 +333,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 		function createNewSlider(element, options) {
 
 			/*
-   	The internal state object is used to store data about the current 'state' of slider.
+   	The internal state object is used to store data aboutUs the current 'state' of slider.
    	This includes values such as the `value`, `enabled`, etc...
    */
 			this._state = {

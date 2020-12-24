@@ -3393,7 +3393,7 @@ define(["eve"], function(eve) {
      | var c = paper.image("apple.png", 10, 10, 80, 80);
     \*/
     paperproto.image = function (src, x, y, w, h) {
-        var out = R._engine.image(this, src || "about:blank", x || 0, y || 0, w || 0, h || 0);
+        var out = R._engine.image(this, src || "aboutUs:blank", x || 0, y || 0, w || 0, h || 0);
         this.__set__ && this.__set__.push(out);
         return out;
     };
@@ -5078,7 +5078,7 @@ define(["eve"], function(eve) {
      **
      * Adds given font to the registered set of fonts for Raphaël. Should be used as an internal call from within Cufón’s font file.
      * Returns original parameter, so it could be used with chaining.
-     # <a href="http://wiki.github.com/sorccu/cufon/about">More about Cufón and how to convert your font form TTF, OTF, etc to JavaScript file.</a>
+     # <a href="http://wiki.github.com/sorccu/cufon/about">More aboutUs Cufón and how to convert your font form TTF, OTF, etc to JavaScript file.</a>
      **
      > Parameters
      **

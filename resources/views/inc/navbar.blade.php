@@ -311,7 +311,7 @@ form:hover .fa{
         <div class="col-xs-12 col-sm-6 no-margin">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/faq">FAQ</a></li>
                 <li><a href="/contact">Contact</a></li>

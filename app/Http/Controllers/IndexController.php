@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AboutUs;
+use App\Banner;
 use App\Frontend;
 use Illuminate\Http\Request;
 use App\Department;
@@ -26,11 +28,13 @@ class IndexController extends Controller
                 ->take(10)
                 ->get();
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
+        $banner = Banner::first();
         return view('main.index', [
             'featured' => $featured_products,
             'new_arrival' => $new_arrival,
             'top_sales' => $top_sales,
             'frontEnd' => $frontEnd,
+            'banner' => $banner
         ]);
     }
     public function home() {
@@ -54,7 +58,8 @@ class IndexController extends Controller
     }
 
     public function about() {
-        return view('main.about');
+        $about = AboutUs::first();
+        return view('main.about', compact('about'));
     }
 
     public function blog() {

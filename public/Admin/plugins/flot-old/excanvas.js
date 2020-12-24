@@ -147,7 +147,7 @@ if (!document.createElement('canvas').getContext) {
 
         // Remove fallback content. There is no way to hide text nodes so we
         // just remove all childNodes. We could hide all elements and remove
-        // text nodes but who really cares about the fallback content.
+        // text nodes but who really cares aboutUs the fallback content.
         el.innerHTML = '';
 
         // do not use inline function because that will leak memory
@@ -939,11 +939,11 @@ if (!document.createElement('canvas').getContext) {
                          mr(p.xEnd), ',', mr(p.yEnd));
             break;
         }
-  
-  
+
+
         // TODO: Following is broken for curves due to
         //       move to proper paths.
-  
+
         // Figure out dimensions so we can do gradient fills
         // properly
         if (p) {
@@ -962,15 +962,15 @@ if (!document.createElement('canvas').getContext) {
         }
       }
       lineStr.push(' ">');
-  
+
       if (!aFill) {
         appendStroke(this, lineStr);
       } else {
         appendFill(this, lineStr, min, max);
       }
-  
+
       lineStr.push('</g_vml_:shape>');
-  
+
       this.element_.insertAdjacentHTML('beforeEnd', lineStr.join(''));
     }
   };
@@ -1243,7 +1243,7 @@ if (!document.createElement('canvas').getContext) {
         textAlign = 'left';
     }
 
-    // 1.75 is an arbitrary number, as there is no info about the text baseline
+    // 1.75 is an arbitrary number, as there is no info aboutUs the text baseline
     switch (this.textBaseline) {
       case 'hanging':
       case 'top':
