@@ -164,7 +164,12 @@ form:hover .fa{
                             <form class="form" action="/products/search" method="POST">
                                 @csrf
                                 <div class="control-group pb-3">
-                                    <input class="search-field" type="search" placeholder="Search..." name="query" />
+                                    <input list="product" class="search-field" type="search" placeholder="Search..." name="query" />
+                                    <datalist id="product">
+                                        @foreach($products as $p)
+                                            <option>{{$p->name}}</option>
+                                        @endforeach
+                                    </datalist>
                                     <i class="fa fa-search fa-lg"></i>
                                     <a class="search-button" type="submit"></a>
                                 </div>

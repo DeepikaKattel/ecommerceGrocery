@@ -464,7 +464,7 @@
         <div class="logo-slider">
             @foreach ($featured as $f)
             <div class="item">
-                <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                 <div class="body center">
                    <div class="title">
                        <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
@@ -489,7 +489,7 @@
         <div class="logo-slider">
             @foreach ($new_arrival as $f)
                 <div class="item">
-                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                    <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     <div class="body center">
                         <div class="title">
                             <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
@@ -514,7 +514,7 @@
         <div class="logo-slider">
             @foreach ($top_sales as $f)
                 <div class="item">
-                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/>
+                    <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     <div class="body center">
                         <div class="title">
                             <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>

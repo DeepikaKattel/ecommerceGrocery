@@ -29,12 +29,14 @@ class IndexController extends Controller
                 ->get();
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         $banner = Banner::first();
+        $products = Product::get();
         return view('main.index', [
             'featured' => $featured_products,
             'new_arrival' => $new_arrival,
             'top_sales' => $top_sales,
             'frontEnd' => $frontEnd,
-            'banner' => $banner
+            'banner' => $banner,
+            'products' => $products
         ]);
     }
     public function home() {
