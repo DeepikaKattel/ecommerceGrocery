@@ -1,4 +1,5 @@
 <!-- Start Main Top -->
+
 <style>
 .navbar-brand {
     height:85px;
@@ -164,12 +165,8 @@ form:hover .fa{
                             <form class="form" action="/products/search" method="POST">
                                 @csrf
                                 <div class="control-group pb-3">
-                                    <input list="product" class="search-field" type="search" placeholder="Search..." name="query" />
-                                    <datalist id="product">
-                                        @foreach($products as $p)
-                                            <option>{{$p->name}}</option>
-                                        @endforeach
-                                    </datalist>
+                                    <input id="searchProduct" class="search-field" type="search" placeholder="Search..." name="query" />
+
                                     <i class="fa fa-search fa-lg"></i>
                                     <a class="search-button" type="submit"></a>
                                 </div>
@@ -310,6 +307,10 @@ form:hover .fa{
         <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
+
+
+
+
 <!-- ============================================================= TOP NAVIGATION ============================================================= -->
 {{--<nav class="top-bar animate-dropdown">
     <div class="container">

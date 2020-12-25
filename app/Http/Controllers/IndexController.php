@@ -37,6 +37,7 @@ class IndexController extends Controller
             'frontEnd' => $frontEnd,
             'banner' => $banner,
             'products' => $products
+
         ]);
     }
     public function home() {
@@ -52,6 +53,7 @@ class IndexController extends Controller
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
+//        $products = Product::get();
         return view('main.home', [
             'featured' => $featured_products,
             'new_arrival' => $new_arrival,
@@ -88,10 +90,12 @@ class IndexController extends Controller
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
+        $products = Product::get();
         return view('carousel', [
             'featured' => $featured_products,
             'new_arrival' => $new_arrival,
-            'top_sales' => $top_sales
+            'top_sales' => $top_sales,
+            'products' => $products
         ]);
     }
 }

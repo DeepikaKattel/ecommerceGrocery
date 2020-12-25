@@ -6,11 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="">
-    <meta name="keywords" content="Online,Nepal, Template, eCommerce">
+    <meta name="keywords" content="Online,Nepal, Let It Grow - Nepal, eCommerce">
     <meta name="robots" content="all">
 
     <title>Community Mart</title>
+
+    {{--  For search autocomplete  --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    {{--  For popup modal  --}}
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -81,6 +91,32 @@
 
     @yield('content')
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
     @include('inc.footer')
 
     <!-- JavaScripts placed at the end of the document so the pages load faster -->
@@ -102,7 +138,7 @@
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/cart.js"></script>
     <script src="/assets/js/navbar.js"></script>
-    <!-- ALL JS FILES -->
+{{--    <!-- ALL JS FILES -->--}}
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -110,7 +146,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="{{asset('js/carousel.js')}}"></script>
-    <!-- ALL PLUGINS -->
+{{--    <!-- ALL PLUGINS -->--}}
     <script src="{{asset('js/jquery.superslides.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-select.js')}}"></script>
     <script src="{{asset('js/inewsticker.js')}}"></script>
@@ -146,5 +182,40 @@
         });
 
     </script>
+    <script>
+        $(document).ready(function() {
+            $( "#search" ).autocomplete({
+
+                source: function(request, response) {
+                    $.ajax({
+                        url: "{{url('livesearch')}}",
+                        data: {
+                            term : request.term
+                        },
+                        dataType: "json",
+                        success: function(data){
+                            var resp = $.map(data,function(obj){
+                                //console.log(obj.city_name);
+                                return obj.name;
+                            });
+
+                            response($.ui.autocomplete.filter(resp, request.term));
+                        }
+                    });
+                },
+                minLength: 1
+            });
+        });
+
+    </script>
+
+    <script>
+        $(window).load(function()
+        {
+            $('#myModal').modal('show');
+        });
+    </script>
+
+
 </body>
 </html>

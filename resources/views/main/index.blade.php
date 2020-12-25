@@ -137,6 +137,13 @@
     .slick-dots li.slick-active button:before{
         color:#ff5722;
     }
+    .slick-next{
+        right:-20px !important;
+    }
+    .slick-prev{
+        left:-20px !important;
+        z-index: 3;ca
+    }
     .slick-dots li button.before{
         font-size:12px;
     }
@@ -147,6 +154,7 @@
     .slick-next:before {
         font-family: "FontAwesome";
         content: '\f101';
+        margin-right:-10px !important;
     }
     .slick-next:before,
     .slick-prev:before{
@@ -164,7 +172,7 @@
         justify-content: space-evenly;
         padding: 0;
         overflow: hidden;
-        background-color: #547338;
+        background-color: #ff7700;
     }
     @media (max-width:750px){
     .categories ul{

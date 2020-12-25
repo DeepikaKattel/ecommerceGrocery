@@ -77,6 +77,8 @@ Route::delete('/admin/user/remove/{userid}','Admin\UserController@removeUser');
 
 Route::get('/admin/checkouts','Admin\CheckoutController@getCheckouts');
 
+Route::get('livesearch','ProductsController@livesearch')->name('livesearch');
+
 
 Route::get('file-import-export', 'Admin\ProductController@fileImportExport');
 Route::post('file-import', 'Admin\ProductController@fileImport')->name('file-import');
