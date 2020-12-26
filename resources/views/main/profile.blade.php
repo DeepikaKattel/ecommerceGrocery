@@ -103,12 +103,12 @@
                             <!-- Modal content-->
                             <div class="modal-content" style="border: 1px solid green">
                                 <div class="modal-header" style="background: black;color:white">
-                                    <h4>Scan Pay</h4>
+                                    <h4>{{$barcode->title}}</h4>
                                     <button type="button" class="close" data-dismiss="modal" style="color:black">&times;</button>
 
                                 </div>
                                 <div class="modal-body">
-                                    <img alt="" src="{{asset('images/barcode.jpg')}}}"/>
+                                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/barcode/{{$barcode->image}}"/>
 {{--                                    <span class="badge badge-danger" style="background-color: red;font-size: 30px;display: inline-block">{{$popup->discount1}}</span>--}}
                                 </div>
                                 {{--                <div class="modal-footer">--}}

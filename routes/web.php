@@ -69,6 +69,9 @@ Route::get('/aboutUs/destroy/{id}', 'Admin\AboutUsController@destroy')->name('a.
 Route::resource('/banner', 'BannerController');
 Route::get('/banner/destroy/{id}', 'BannerController@destroy')->name('b.destroy');
 
+Route::resource('/barcode', 'BarCodeController');
+Route::get('/barcode/destroy/{id}', 'BarCodeController@destroy')->name('bc.destroy');
+
 Route::get('/admin/vendor', 'Admin\VendorController@vendorList');
 Route::post('/admin/vendor', 'Admin\VendorController@addVendor');
 Route::delete('/admin/vendor/remove/{vendorId}','Admin\VendorController@deleteVendor');

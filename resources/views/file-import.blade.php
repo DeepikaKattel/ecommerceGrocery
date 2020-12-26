@@ -10,7 +10,7 @@
     <body>
         <div class="container mt-5 text-center">
             <h2 class="mb-4">
-                File import and export
+                File import
             </h2>
 
             <form action="{{route('file-import')}}" method="POST" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <button class="btn btn-primary">Import data</button>
-                <a class="btn btn-success" href="{{ route('file-export') }}">Export data</a>
+{{--                <a class="btn btn-success" href="{{ route('file-export') }}">Export data</a>--}}
             </form>
         </div>
     </body>
