@@ -28,7 +28,8 @@ class BannerController extends Controller
      */
     public function create()
     {
-        return view('banner.create');
+        $count = Banner::all()->count();
+        return view('banner.create',compact('count'));
     }
 
     /**

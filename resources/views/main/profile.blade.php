@@ -92,6 +92,34 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="col-sm-6 ml-3 mb-2">
+{{--                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--}}
+                    <a class="btn btn-info btn-md" data-toggle="modal" data-target="#paymentModal"><i class="fa fa-money" aria-hidden="true"></i> {{_('Make Payment')}}</a>
+                </div>
+                <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade in" id="paymentModal" role="dialog" >
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content" style="border: 1px solid green">
+                                <div class="modal-header" style="background: black;color:white">
+                                    <h4>Scan Pay</h4>
+                                    <button type="button" class="close" data-dismiss="modal" style="color:black">&times;</button>
+
+                                </div>
+                                <div class="modal-body">
+                                    <img alt="" src="{{asset('images/barcode.jpg')}}}"/>
+{{--                                    <span class="badge badge-danger" style="background-color: red;font-size: 30px;display: inline-block">{{$popup->discount1}}</span>--}}
+                                </div>
+                                {{--                <div class="modal-footer">--}}
+                                {{--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
+                                {{--                </div>--}}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </main><!-- /#aboutUs-us -->

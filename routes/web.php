@@ -60,6 +60,9 @@ Route::get('/contact/destroy/{id}', 'ContactUsController@destroy')->name('c.dest
 Route::resource('/frontend', 'Admin\FrontendController');
 Route::get('/frontend/destroy/{id}', 'Admin\FrontendController@destroy')->name('f.destroy');
 
+Route::resource('/popup', 'Admin\PopUpController');
+Route::get('/popup/destroy/{id}', 'Admin\PopUpController@destroy')->name('p.destroy');
+
 Route::resource('/aboutUs', 'Admin\AboutUsController');
 Route::get('/aboutUs/destroy/{id}', 'Admin\AboutUsController@destroy')->name('a.destroy');
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AboutUs;
 use App\Banner;
 use App\Frontend;
+use App\PopUp;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Product;
@@ -29,6 +30,7 @@ class IndexController extends Controller
                 ->get();
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         $banner = Banner::first();
+        $popup = PopUp::first();
         $products = Product::get();
         return view('main.index', [
             'featured' => $featured_products,
@@ -36,7 +38,8 @@ class IndexController extends Controller
             'top_sales' => $top_sales,
             'frontEnd' => $frontEnd,
             'banner' => $banner,
-            'products' => $products
+            'products' => $products,
+            'popup' => $popup
 
         ]);
     }

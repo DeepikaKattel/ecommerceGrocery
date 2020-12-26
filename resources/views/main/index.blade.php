@@ -142,7 +142,7 @@
     }
     .slick-prev{
         left:-20px !important;
-        z-index: 3;ca
+        z-index: 3;
     }
     .slick-dots li button.before{
         font-size:12px;
@@ -542,6 +542,31 @@
             @endforeach
         </div>
     </div>
+<div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" >
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" style="border: 4px solid green">
+                <div class="modal-header" style="background: red;color:white">
+                    <h4>{{$popup->title}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="color:black">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/bannerPopUp/{{$popup->banner}}"/>
+                    <span class="badge badge-danger" style="background-color: red;font-size: 30px;display: inline-block">{{$popup->discount1}}</span>
+                </div>
+{{--                <div class="modal-footer">--}}
+{{--                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
+{{--                </div>--}}
+            </div>
+
+        </div>
+    </div>
+
+</div>
     <div class="row mx-2" style="margin-top: 100px;margin-bottom: -50px">
         <div class="imageBanner col-lg-9 col-12">
             <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner1}}"/>

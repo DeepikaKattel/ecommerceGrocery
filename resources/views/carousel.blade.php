@@ -9,12 +9,9 @@
 
                     {{--  For search autocomplete  --}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-                        {{--  For popup modal  --}}
+{{--                          For popup modal  --}}
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
 
 
@@ -33,12 +30,13 @@
         <div class="col-12">
             <div id="custom-search-input">
                 <div class="input-group">
-                    <input id="search" name="search" type="text" class="form-control" placeholder="Search" />
+                    <input id="searchProduct" name="search" type="text" class="form-control" placeholder="Search" />
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="container">
     <!-- Trigger the modal with a button -->
@@ -66,10 +64,13 @@
     </div>
 
 </div>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
-        $( "#search" ).autocomplete({
+        $( "#searchProduct" ).autocomplete({
 
             source: function(request, response) {
                 $.ajax({
