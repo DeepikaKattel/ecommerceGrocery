@@ -33,7 +33,8 @@ class DepartmentController extends Controller
      */
     public function create(Request $request)
     {
-        return view('admin.departmentAdd');
+        $count = Department::all()->count();
+        return view('admin.departmentAdd',compact('count'));
     }
 
     /**

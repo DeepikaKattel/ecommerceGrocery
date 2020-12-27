@@ -13,7 +13,7 @@
                             <i class="fa fa-list"></i> shop by department
                         </a>
                         <ul class="dropdown-menu" id="departmentList">
-                            
+
                         </ul>
                     </li>
 
@@ -42,7 +42,7 @@
                 <section class="section sign-in inner-right-xs">
                     <h2 class="bordered">Sign In</h2>
                     <p>Hello, Welcome to your account</p>
-                    
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -96,7 +96,7 @@
 
                     <ul class="list-unstyled list-benefits">
                         <li><i class="fa fa-check primary-color"></i> Speed your way through the checkout</li>
-                        <li><i class="fa fa-check primary-color"></i> Track your orders easily</li>
+{{--                        <li><i class="fa fa-check primary-color"></i> Track your orders easily</li>--}}
                         <li><i class="fa fa-check primary-color"></i> Keep a record of all your purchases</li>
                     </ul>
 

@@ -183,6 +183,11 @@
     .categories li {
         float: left;
     }
+    body
+    {
+        padding-right:0px !important;
+        margin-right:0px !important;
+    }
 
     .categories li a {
         display: block;

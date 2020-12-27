@@ -16,10 +16,10 @@ class RoleSeeder extends Seeder
             array(
                 'role' => 'admin',
             ),
-            array(
-
-                'role' => 'vendor_account',
-            ),
+//            array(
+//
+//                'role' => 'vendor_account',
+//            ),
             array(
 
                 'role' => 'customer',

@@ -20,6 +20,7 @@
     </div>
 
     <div class="col-md-10 offset-md-1 col-sm-12">
+        @if($count < 15)
         <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -29,6 +30,11 @@
 
             <input class="form-control btn btn-primary mb-4" type="submit" value="Submit">
         </form>
+        @else
+            <div class="card-body">
+                <p> Sorry, you cannot add more categories.</p>
+            </div>
+        @endif
     </div>
 @endsection
 

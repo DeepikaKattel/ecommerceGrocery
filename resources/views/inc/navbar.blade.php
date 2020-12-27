@@ -72,19 +72,19 @@ form:hover .fa{
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="our-link">
-                        <ul>
-                            <li style="color:white">Call US :- +900 800 10</li>
-                            <li style="color:white"><i class="fas fa-location-arrow"></i> Our location</li>
-                            <li style="color:white"> Contact Us</li>
+{{--                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">--}}
+{{--                    <div class="our-link">--}}
+{{--                        <ul>--}}
+{{--                            <li style="color:white">Call US :- +900 800 10</li>--}}
+{{--                            <li style="color:white"><i class="fas fa-location-arrow"></i> Our location</li>--}}
+{{--                            <li style="color:white"> Contact Us</li>--}}
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
 					<div class="our-link">
-                        <ul class="right">
+                        <ul>
                         @guest
                             <li><a href="/register" style="color:white">Register</a></li>
                             <li><a href="/login" style="color:white">Login</a></li>

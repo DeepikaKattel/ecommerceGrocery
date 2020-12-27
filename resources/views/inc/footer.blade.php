@@ -2,19 +2,18 @@
         <div class="footer-main">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Community Mart</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
+{{--                    <div class="col-lg-4 col-md-12 col-sm-12">--}}
+{{--                        <div class="footer-widget">--}}
+{{--                            <h4>About Community Mart</h4>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>--}}
+{{--							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                    <div class="col-lg-8 col-md-12 col-sm-12">
                         <div class="footer-link">
                             <h4>Information</h4>
                             <ul>
                                 <li><a href="/about">About us</a></li>
-                                <li><a href="/faq">FAQs</a></li>
                                 <li><a href="/contact">Contact Us</a></li>
                             </ul>
                         </div>
@@ -42,10 +41,9 @@
             <div class="col-xs-12 col-sm-4 no-margin">
                 <div class="social-icons">
                     <ul>
-                        <li><a href="https://facebook.com" class="fa fa-facebook"></a></li>
-                        <li><a href="https://youtube.com" class="fa fa-youtube"></a></li>
-                        <li><a href="https://instagram.com" class="fa fa-instagram"></a></li>
-                        <li><a href="https://linkedin.com" class="fa fa-linkedin"></a></li>
+                        <li><a href="https://www.facebook.com/LetITGrowNepal/" class="fa fa-facebook"></a></li>
+                        <li><a href="https://www.instagram.com/letitgrownepal/" class="fa fa-instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/company/let-it-grow-nepal" class="fa fa-linkedin"></a></li>
                     </ul>
                 </div><!-- /.social-icons -->
 

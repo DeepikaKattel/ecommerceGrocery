@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        body
+        {
+            padding-right:0px !important;
+            margin-right:0px !important;
+        }
+        .modal-body {
+            display: flex !important;
+            justify-content: center !important;
+        }
+    </style>
 <div class="wrapper">
     <div class="animate-dropdown">
         <!-- ========================================= BREADCRUMB ========================================= -->
@@ -105,7 +116,6 @@
                                 <div class="modal-header" style="background: black;color:white">
                                     <h4>{{$barcode->title}}</h4>
                                     <button type="button" class="close" data-dismiss="modal" style="color:black">&times;</button>
-
                                 </div>
                                 <div class="modal-body">
                                     <img alt="" src="assets/images/blank.gif" data-echo="/storage/images/barcode/{{$barcode->image}}"/>
