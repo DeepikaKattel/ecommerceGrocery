@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ asset('Admin/plugins/summernote/summernote-bs4.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+      {{--  For search autocomplete  --}}
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   </head>
 
   <body class="hold-transition sidebar-mini layout-fixed">
@@ -362,5 +364,33 @@
     <script src="{{ asset('Admin/dist/js/pages/dashboard.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('Admin/dist/js/demo.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $( "#searchProduct" ).autocomplete({
+
+                source: function(request, response) {
+                    $.ajax({
+                        url: "{{url('livesearch')}}",
+                        data: {
+                            term : request.term
+                        },
+                        dataType: "json",
+                        success: function(data){
+                            var resp = $.map(data,function(obj){
+                                //console.log(obj.city_name);
+                                return obj.name;
+                            });
+
+                            response($.ui.autocomplete.filter(resp, request.term));
+                        }
+                    });
+                },
+                minLength: 1
+            });
+        });
+
+    </script>
   </body>
 </html>

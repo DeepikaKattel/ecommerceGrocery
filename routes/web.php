@@ -85,6 +85,9 @@ Route::get('/admin/checkouts','Admin\CheckoutController@getCheckouts');
 
 Route::get('livesearch','ProductsController@livesearch')->name('livesearch');
 
+Route::get('/itemSort','Admin\ProductController@sort')->name('sort');
+Route::get('/itemSearch','Admin\ProductController@search')->name('search');
+
 
 Route::get('file-import-export', 'Admin\ProductController@fileImportExport');
 Route::post('file-import', 'Admin\ProductController@fileImport')->name('file-import');

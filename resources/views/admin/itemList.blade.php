@@ -15,6 +15,37 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="pull-left">
+            <form action="/itemSort" method="get" style="margin-left: 250px;">
+                <div class="input-group">
+                    <select class="form-control" id="sort" name="sort" >
+                        <option value="id" selected="selected">Sort By Category</option>
+                        @foreach ($catList as $name => $id)
+                            <option value="{{$id}}">{{$name}}</option>
+                        @endforeach
+                    </select>
+                    <span class="input-group-prepend">
+                      <button type="submit" class="btn btn-primary">Sort</button>
+                  </span>
+                </div>
+            </form>
+        </div>
+
+        <div class="pull-right">
+            <form action="/itemSearch" method="get" style="margin-left: 30px;width: 280px">
+                <div class="input-group" >
+                    <input type="search" class="form-control" id="searchProduct" name="search" placeholder="----Search Item----">
+                    <span class="input-group-prepend">
+                      <button type="submit" class="btn btn-primary">Search</button>
+                  </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
 {{--    <div class="col-sm-6 ml-3 mb-2">--}}
 {{--        <a href="/admin/userlist" class="btn btn-info btn-sm "><i class="fa fa-arrow-left" aria-hidden="true"></i> {{_('Back')}}</a>--}}
 {{--    </div>--}}
@@ -60,5 +91,6 @@
                     @endforeach
             </table>
         @endif
+            {!!$items->links()!!}
     </div>
 @endsection

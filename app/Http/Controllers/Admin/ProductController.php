@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Department;
 use App\Vendor;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ProductsExport;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -20,11 +22,12 @@ class ProductController extends Controller
 
     public function itemsList() {
         if (Auth::user()->isAdmin()) {
-            $items = Product::all();
+            $items = Product::latest()->Paginate(10);
+            $catList = DB::table('departments')->pluck('id', 'department_name');
         } else {
             $items = Product::where('vendor_id', Auth::user()->vendor_id)->get();
         }
-        return view('admin.itemList',['items' => $items]);
+        return view('admin.itemList',['items' => $items,'catList' => $catList]);
     }
 
     public function addItemPage(){
@@ -141,12 +144,26 @@ class ProductController extends Controller
     public function fileImport(Request $request)
     {
         Excel::import(new ProductsImport, $request->file('file')->store('temp'));
-        return back();
+        Alert::success('Thank you', 'Products have been imported');
+        return view('admin.itemList');
     }
 
 
     public function fileExport()
     {
         return Excel::download(new ProductsExport, 'products-collection.xlsx');
+    }
+    public  function sort(Request $request){
+        $sort = $request->get('sort');
+        $items = Product::with('department')->where('dept_id', 'like', '%'.$sort.'%')->Paginate(10);
+        $catList = DB::table('departments')->pluck('id', 'department_name');
+        return view('admin.itemList',['items' => $items])->with('catList', $catList);
+    }
+
+    public  function search(Request $request){
+        $search = $request->get('search');
+        $items = Product::with('department')->where('name', 'like', '%'.$search.'%')->Paginate(5);
+        $catList = DB::table('departments')->pluck('id', 'department_name');
+        return view('admin.itemList',['items' => $items])->with('catList', $catList);
     }
 }
