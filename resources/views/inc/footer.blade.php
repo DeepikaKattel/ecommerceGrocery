@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                          <div class="footer-link">
-                            <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" class="logo" alt="" style="height:130px;width:250px"></a>
+                            <a class="navbar-brand" href="/"><img src="{{asset('images/logo.PNG')}}" class="logo" alt="" style="height:130px;width:250px"></a>
                          </div>
                     </div>
                 </div>
