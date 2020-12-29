@@ -25,8 +25,8 @@
         justify-content: center;
     }
     .item img{
-        height:90px;
-        width:140px;
+        height:130px;
+        width:200px;
     }
     .badge{
         font-size: 8px;
@@ -34,12 +34,13 @@
 
     .add-cart-button{
         position: absolute;
-        top: 50%;
-        padding-top: 20%;
+        top: 65%;
+        padding-top: 10%;
         bottom: 0;
         left: 0;
+        height:75px;
         right: 0;
-        background: rgba(78, 154, 11, 0.52);
+        background: rgba(45,90,45,0.5);
         color: #fff;
         visibility: hidden;
         opacity: 0;
@@ -480,7 +481,7 @@
                 <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                 <div class="body center">
                    <div class="title">
-                       <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
+                       <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
                    </div>
                    <div class="brand">{{$f->brand}}</div>
                    <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
@@ -490,7 +491,7 @@
                    <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                </div>
                <div class="add-cart-button center inner-xxs">
-                   <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+                   <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
                </div>
 
             </div>
@@ -505,7 +506,7 @@
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     <div class="body center">
                         <div class="title">
-                            <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
+                            <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
                         </div>
                         <div class="brand">{{$f->brand}}</div>
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
@@ -515,7 +516,7 @@
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
-                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
                     </div>
 
                 </div>
@@ -530,7 +531,7 @@
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     <div class="body center">
                         <div class="title">
-                            <a href="/product/{{$f->id}}" style="color:black">{{$f->name}}</a>
+                            <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
                         </div>
                         <div class="brand">{{$f->brand}}</div>
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
@@ -540,7 +541,7 @@
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
-                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">add to cart</a>
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
                     </div>
 
                 </div>

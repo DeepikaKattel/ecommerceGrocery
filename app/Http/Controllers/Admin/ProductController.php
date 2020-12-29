@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Imports\ProductsImport;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Str;
 use App\Product;
 use App\Department;
 use App\Vendor;
