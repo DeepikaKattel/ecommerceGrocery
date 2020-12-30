@@ -167,8 +167,8 @@ form:hover .fa{
                                 <div class="control-group pb-3">
                                     <input id="searchProduct" class="search-field" type="search" placeholder="Search..." name="query" />
 
-                                    <i class="fa fa-search fa-lg"></i>
-                                    <a class="search-button" type="submit"></a>
+{{--                                    <a class="search-button" type="submit"> <i class="fa fa-search fa-lg"></i></a>--}}
+                                    <button type="submit" class="btn">Submit<i class="fa fa-search fa-lg"></i></button>
                                 </div>
                             </form>
                         </li>
