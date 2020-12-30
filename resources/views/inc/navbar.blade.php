@@ -12,8 +12,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
+    /*transition: all 1s;*/
+    width: 200px;
     height: 50px;
     background: white;
     box-sizing: border-box;
@@ -31,7 +31,7 @@
     line-height: 30px;
     outline: 0;
     border: 0;
-    display: none;
+    display: block;
     font-size: 1em;
     border-radius: 20px;
     padding: 0 20px;
@@ -52,14 +52,14 @@ li .form .fa{
     transition: all 1s;
 }
 
-.form:hover{
-    width: 200px;
-    cursor: pointer;
-}
+/*.form:hover{*/
+/*    width: 200px;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.form:hover input{
-    display: block;
-}
+/*.form:hover input{*/
+/*    display: block;*/
+/*}*/
 
 form:hover .fa{
     background: #07051a;
