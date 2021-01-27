@@ -60,6 +60,7 @@
                     <th>Sn</th>
                     <th>Name</th>
                     <th>Brand</th>
+                    <th>Discount</th>
                     <th>Quantity</th>
                      <th>Availability</th>
                     <th>Rate</th>
@@ -76,12 +77,13 @@
                             <td>{{$c}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->brand}}</td>
+                            <td>{{$item->discount}}</td>
                             <td>{{$item->quantity}}</td>
                             <td>{{$item->availability}}</td>
                             <td>Rs. {{$item->rate}}</td>
                             <td>Rs. {{$item->prev_price}}</td>
                             <td>{{$item->sku}}</td>
-                            <td>{{$item->tags}}</td>
+                            <td>{{$item->id}}</td>
                             <td>
                                 <a href="{{route('item.edit',$item->id)}}"><i class="fa fa-lg fa-edit"></i></a>
                                 @method('DELETE')

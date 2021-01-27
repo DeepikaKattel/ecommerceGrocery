@@ -66,6 +66,8 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
+        $product->discount = $request->input('discount');
+
 //        if (Auth::user()->isAdmin()) {
 //            $product->vendor_id = $request->input('vendor_id');
 //        } else {
@@ -91,6 +93,7 @@ class ProductController extends Controller
         $departments = Department::all();
         $vendors = Vendor::all();
         $items = Product::find($id);
+
         return view('admin.itemEdit', compact('items','departments','vendors'));
     }
 
@@ -108,6 +111,9 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
+
+        $product->discount = $request->input('discount');
+
 //        if (Auth::user()->isAdmin()) {
 //            $product->vendor_id = $request->input('vendor_id');
 //        } else {

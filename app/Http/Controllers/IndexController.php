@@ -12,6 +12,7 @@ use App\Product;
 use App\Cart;
 use App\CartItem;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -28,6 +29,10 @@ class IndexController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(10)
                 ->get();
+
+        $dairyDepartment = Department::where('department_name', '=', 'Dairy')->value('id');
+        $dairy= Product::select()->where('dept_id', $dairyDepartment)->get();
+
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         $banner = Banner::first();
         $popup = PopUp::first();
@@ -39,8 +44,8 @@ class IndexController extends Controller
             'frontEnd' => $frontEnd,
             'banner' => $banner,
             'products' => $products,
-            'popup' => $popup
-
+            'popup' => $popup,
+            'dairy' => $dairy
         ]);
     }
     public function home() {

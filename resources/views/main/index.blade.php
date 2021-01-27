@@ -105,6 +105,16 @@
         padding:5px 10px;
         font-size:20px;
     }
+    .discount-badge{
+        position: absolute;
+        right:15px;
+        top:15px;
+        background:red;
+        text-align: center;
+        color:white;
+        padding:5px 5px;
+        font-size:10px;
+    }
     h1{
         font-size:20px;
         font-weight:500;
@@ -250,7 +260,7 @@
   transform: translateX(0);
 }
 .slider, #slides-shop{
-    height:300px;
+    height:380px;
 }
 
 
@@ -268,7 +278,7 @@
         <!-- ================================== TOP NAVIGATION : END ================================== -->
 
     <div class="row slider mx-5" style="margin-bottom: -50px">
-        <div id="slides-shop" class="cover-slides col-md-12 mt-5" >
+        <div id="slides-shop" class="cover-slides col-md-12 mt-5">
             <ul class="slides-container">
                 @foreach($frontEnd as $front)
                 <li class="text-center">
@@ -479,6 +489,9 @@
             @foreach ($featured as $f)
             <div class="item">
                 <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                @if($f->discount)
+                    <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                @endif
                 <div class="body center">
                    <div class="title">
                        <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
@@ -504,6 +517,9 @@
             @foreach ($new_arrival as $f)
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                    @if($f->discount)
+                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    @endif
                     <div class="body center">
                         <div class="title">
                             <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
@@ -529,6 +545,9 @@
             @foreach ($top_sales as $f)
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                    @if($f->discount)
+                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    @endif
                     <div class="body center">
                         <div class="title">
                             <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
@@ -548,6 +567,38 @@
             @endforeach
         </div>
     </div>
+    @if($dairy)
+    <div class="container-slider">
+        @if($dairy)
+        <h1>Dairy</h1>
+        @endif
+        <div class="logo-slider">
+            @foreach ($dairy as $f)
+                <div class="item">
+                    <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                    @if($f->discount)
+                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    @endif
+                    <div class="body center">
+                        <div class="title">
+                            <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
+                        </div>
+                        <div class="brand">{{$f->brand}}</div>
+                        <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
+                    </div>
+                    <div class="prices center">
+                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
+                    </div>
+                    <div class="add-cart-button center inner-xxs">
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
 <div class="container">
 
     <!-- Modal -->

@@ -35,7 +35,8 @@ class CartController extends Controller
         if (Auth::check()) {
             $cart = Cart::where([
                 ['user_id', '=', Auth::id()],
-                ['checkout', '=', 0]
+                ['checkout', '=', 0],
+                []
             ])->get();
             $product = Product::find($request->input('product'));
             if ($cart[0] ?? '') {
@@ -43,11 +44,14 @@ class CartController extends Controller
                 $cart[0]->grand_total += $product->rate;
                 $cart[0]->save();
             } else {
+                $houseNumber = Checkout::select('house_number')->whereNotNull('house_number');
+                $discount = 20 / 100;
                 $cart = new Cart();
                 $cart->user_id = Auth::id();
+                $cart->house_number = $houseNumber;
                 $cart->save();
                 $this->createCartItem($product->id, $cart->id);
-                $cart->grand_total += $product->rate;
+                $cart->grand_total += $product->rate * $discount;
                 $cart->save();
             }
             return $this->getCart($request);
@@ -131,6 +135,7 @@ class CartController extends Controller
         $checkout = new Checkout();
         $checkout->name = $request->input('name');
         $checkout->email = $request->input('email');
+        $checkout->house_number = $request->input('house_number');
         $checkout->address = $request->input('address');
         $checkout->phone_no = $request->input('phone_no');
         $checkout->cart_id = $request->input('cart_id');

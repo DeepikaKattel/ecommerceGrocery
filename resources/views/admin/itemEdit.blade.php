@@ -22,6 +22,7 @@
     <div class="col-md-10 offset-md-1 col-sm-12">
         <form action="{{route('item.update',$items->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PATCH')
             <div class="form-group">
                 <label for="name">Product Name:</label>
                 <input type="text" class="form-control" name="name" value="{{old('name', $items->name)}}">
@@ -29,6 +30,10 @@
             <div class="form-group">
                 <label for="brand">Brand:</label>
                 <input type="text" class="form-control" name="brand" value="{{old('brand', $items->brand)}}">
+            </div>
+            <div class="form-group">
+                <label for="discount">Discount:</label>
+                <input type="number" class="form-control" name="discount" value="{{old('discount', $items->discount)}}">
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
