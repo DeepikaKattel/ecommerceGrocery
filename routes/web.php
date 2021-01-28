@@ -42,7 +42,7 @@ Route::get('/admin/itemlist','Admin\ProductController@itemslist');
 Route::get('/admin/itemlist/add','Admin\ProductController@addItemPage');
 Route::post('/admin/itemlist/add','Admin\ProductController@additem');
 Route::get('/admin/itemlist/{id}/edit','Admin\ProductController@edit')->name('item.edit');
-Route::post('/admin/itemlist/{id}','Admin\ProductController@update')->name('item.update');
+Route::patch('/admin/itemlist/{id}','Admin\ProductController@update')->name('item.update');
 Route::get('/admin/itemlist/destroy/{id}', 'Admin\ProductController@destroy')->name('i.destroy');
 
 Route::get('/admin/departmentList','Admin\DepartmentController@index');
@@ -82,6 +82,9 @@ Route::post('/admin/user/add','Admin\UserController@addUser');
 Route::delete('/admin/user/remove/{userid}','Admin\UserController@removeUser');
 
 Route::get('/admin/checkouts','Admin\CheckoutController@getCheckouts');
+
+//status
+Route::get('/checkout/{id}/status', 'Admin\CheckoutController@status')->name('checkout.status');
 
 Route::get('livesearch','ProductsController@livesearch')->name('livesearch');
 

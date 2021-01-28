@@ -41,4 +41,15 @@ class CheckoutController extends Controller
         });
         return view('admin.checkout', compact('carts'));
     }
+    public function status(Request $request, $id){
+        $data = Checkout::find($id);
+
+        if($data->status == "pending"){
+            $data->status="complete";
+        }else{
+            $data->status="pending";
+        }
+        $data->save();
+        return redirect()->back()->with('message', 'Payment status of'.' '.$data->name.' '.'has been changed successfully');
+    }
 }

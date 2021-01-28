@@ -26,12 +26,13 @@
                     <th>Customer Name</th>
                     <th>Email</th>
                     <th>Address</th>
-                    <th>House Number</th>
                     <th>Phone No.</th>
                     <th>Items</th>
                     <th>Quantity</th>
                     <th>Rate</th>
                     <th>Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
                     @foreach ($carts as $cart)
                         @if ($cart != null)
@@ -40,7 +41,6 @@
                             <td>{{$cart->getCheckout->name}}</td>
                             <td>{{$cart->getCheckout->email}}</td>
                             <td>{{$cart->getCheckout->address}}</td>
-                            <td>{{$cart->getCheckout->house_number}}</td>
                             <td>{{$cart->getCheckout->phone_no}}</td>
                             <td class="text-left">
                                 @foreach ($cart->cartItems as $cartItem)
@@ -64,6 +64,18 @@
                                 @endforeach
                                 {{$cart->grand_total}}
                             </td>
+                            <td>
+                                {{$cart->getCheckout->status}}
+                            </td>
+                            @if($cart->getCheckout->status == "pending")
+                                <td style="width: 1.5rem;">
+                                    <a href="/checkout/{{$cart->getCheckout->id}}/status" class="btn btn-sm btn-outline-success"> Complete </a>
+                                </td>
+                            @else
+                                <td style="width: 1.5rem;">
+                                    <a href="/checkout/{{$cart->getCheckout->id}}/status" class="btn btn-sm btn-outline-danger"> Pending </a>
+                                </td>
+                            @endif
                         </tr>
                         @endif
                     @endforeach
