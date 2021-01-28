@@ -42,7 +42,7 @@
                 <section class="section sign-in inner-right-xs">
                     <h2 class="bordered">Register</h2>
                     <p>Create Your new Account</p>
-                    
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -60,6 +60,15 @@
                             <label>{{ __('E-Mail Address') }}</label>
                             <input type="text" class="le-input" name="email" value="{{ old('email') }}" required autofocus>
                             @error('email')
+                            <span class="red-text" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div><!-- /.field-row -->
+                        <div class="field-row">
+                            <label>{{ __('House Number') }}</label>
+                            <input type="text" class="le-input" name="house_number" autofocus>
+                            @error('house_number')
                             <span class="red-text" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -74,7 +74,9 @@
                                     @foreach ($cart->cartItem as $cartItem)
                                         {{$cartItem->product->name}} <br>
                                     @endforeach
+                                    Discount:<br>
                                     Grand Total:
+
                                 </td>
                                 <td>
                                     @foreach ($cart->cartItem as $cartItem)
@@ -90,7 +92,9 @@
                                     @foreach ($cart->cartItem as $cartItem)
                                         {{$cartItem->product->rate * $cartItem->quantity}} <br>
                                     @endforeach
+                                    {{$cart->discount}}<br>
                                     {{$cart->grand_total}}
+
                                 </td>
                                 @if ($cart->getCheckout == null)
                                     <td>In cart</td>

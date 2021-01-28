@@ -13,7 +13,7 @@
     </li>
     @endforeach
     <li class="list-group-item">
-        Grand Total:
+        Grand Total After Discount:
         <span class="amount">{{$grand_total}}</span>
     </li>
 @else

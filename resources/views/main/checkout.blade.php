@@ -54,10 +54,6 @@
                         <label>Email(Optional):</label>
                         <input type="email" class="le-input" name="email">
                     </div><!-- /.field-row -->
-                    <div class="field-row">
-                        <label>House Number:</label>
-                        <input type="text" class="le-input" name="house_number">
-                    </div><!-- /.field-row -->
 
 
                     <div class="field-row">

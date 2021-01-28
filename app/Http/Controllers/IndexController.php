@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\AboutUs;
 use App\Banner;
+use App\checkout;
 use App\Frontend;
 use App\PopUp;
+use App\User;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Product;
@@ -29,6 +31,9 @@ class IndexController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(10)
                 ->get();
+
+
+
 
         $dairyDepartment = Department::where('department_name', '=', 'Dairy')->value('id');
         $dairy= Product::select()->where('dept_id', $dairyDepartment)->get();

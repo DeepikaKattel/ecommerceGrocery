@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddHouseNumberToCheckoutsTable extends Migration
+class AddHouseNumberToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddHouseNumberToCheckoutsTable extends Migration
      */
     public function up()
     {
-        Schema::table('checkouts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('house_number')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddHouseNumberToCheckoutsTable extends Migration
      */
     public function down()
     {
-        Schema::table('checkouts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

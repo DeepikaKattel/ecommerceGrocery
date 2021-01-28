@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','house_number','password'
     ];
 
     /**
@@ -44,7 +44,7 @@ class User extends Authenticatable
     public function vendor() {
         return $this->belongsTo(Vendor::class);
     }
-    
+
     public function isAdmin() {
         return $this->user_role == 1 ? TRUE : FALSE;
     }

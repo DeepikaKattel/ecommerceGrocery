@@ -12,7 +12,7 @@
     </div>
 
     <div class="col-sm-6 ml-3 mb-2">
-        <a href="/admin/userlist" class="btn btn-info btn-sm "><i class="fa fa-arrow-left" aria-hidden="true"></i> {{_('Back')}}</a> 
+        <a href="/admin/userlist" class="btn btn-info btn-sm "><i class="fa fa-arrow-left" aria-hidden="true"></i> {{_('Back')}}</a>
     </div>
 
     <div class="col-md-10 offset-md-1 col-sm-12">
@@ -26,6 +26,7 @@
                     <th>Customer Name</th>
                     <th>Email</th>
                     <th>Address</th>
+                    <th>House Number</th>
                     <th>Phone No.</th>
                     <th>Items</th>
                     <th>Quantity</th>
@@ -38,8 +39,9 @@
                             <td>{{$c++}}</td>
                             <td>{{$cart->getCheckout->name}}</td>
                             <td>{{$cart->getCheckout->email}}</td>
-                            <td>{{$cart->getCheckout->address}}</td>                            
-                            <td>{{$cart->getCheckout->phone_no}}</td>                            
+                            <td>{{$cart->getCheckout->address}}</td>
+                            <td>{{$cart->getCheckout->house_number}}</td>
+                            <td>{{$cart->getCheckout->phone_no}}</td>
                             <td class="text-left">
                                 @foreach ($cart->cartItems as $cartItem)
                                 {{$cartItem->product->name}} <br>
