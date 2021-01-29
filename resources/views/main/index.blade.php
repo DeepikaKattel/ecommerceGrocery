@@ -631,6 +631,71 @@
         </div>
     </div>
 @endif
+
+@if($bakery)
+    <div class="container-slider">
+        @if($bakery)
+            <h1>Bakery Items</h1>
+        @endif
+        <div class="logo-slider">
+            @foreach ($bakery as $f)
+                <div class="item">
+                    <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                    @if($f->discount)
+                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    @endif
+                    <div class="body center">
+                        <div class="title">
+                            <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
+                        </div>
+                        <div class="brand">{{$f->brand}}</div>
+                        <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
+                    </div>
+                    <div class="prices center">
+                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
+                    </div>
+                    <div class="add-cart-button center inner-xxs">
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endif
+@if($chips)
+    <div class="container-slider">
+        @if($chips)
+            <h1>Chips</h1>
+        @endif
+        <div class="logo-slider">
+            @foreach ($chips as $f)
+                <div class="item">
+                    <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
+                    @if($f->discount)
+                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    @endif
+                    <div class="body center">
+                        <div class="title">
+                            <a href="/product/{{$f->id}}" style="color:black">{{ Str::limit($f->name, 10) }}</a>
+                        </div>
+                        <div class="brand">{{$f->brand}}</div>
+                        <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
+                    </div>
+                    <div class="prices center">
+                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
+                    </div>
+                    <div class="add-cart-button center inner-xxs">
+                        <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endif
 <div class="container">
 
     <!-- Modal -->

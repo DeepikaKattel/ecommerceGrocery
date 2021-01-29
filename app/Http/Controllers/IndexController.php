@@ -33,12 +33,14 @@ class IndexController extends Controller
                 ->get();
 
 
-
-
         $dairyDepartment = Department::where('department_name', '=', 'Dairy')->value('id');
         $fruitDepartment = Department::where('department_name', '=', 'Fruits & Vegetables')->value('id');
+        $bakeryDepartment = Department::where('department_name', '=', 'Bakery')->value('id');
+        $chipsDepartment = Department::where('department_name', '=', 'Chips')->value('id');
         $dairy= Product::select()->where('dept_id', $dairyDepartment)->get();
         $fruits= Product::select()->where('dept_id', $fruitDepartment)->get();
+        $bakery= Product::select()->where('dept_id', $bakeryDepartment)->get();
+        $chips= Product::select()->where('dept_id', $chipsDepartment)->get();
 
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         $banner = Banner::first();
@@ -53,7 +55,9 @@ class IndexController extends Controller
             'products' => $products,
             'popup' => $popup,
             'dairy' => $dairy,
-            'fruits' => $fruits
+            'fruits' => $fruits,
+            'bakery' => $bakery,
+            'chips' => $chips
         ]);
     }
     public function home() {

@@ -13,15 +13,15 @@ class VendorSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Deepika Kattel',
-            'email' => 'vendor@easynepal.com',
-            'user_role' => '2',
-            'vendor_id' => '1',
-            'password' => bcrypt('1234'),
-            'email_verified_at' => now(),
-            'remember_token' => Str::random(10),
-
-        ]);
+//        DB::table('users')->insert([
+//            'name' => 'Vendor',
+//            'email' => 'vendor@easynepal.com',
+//            'user_role' => '2',
+//            'vendor_id' => '1',
+//            'password' => bcrypt('1234'),
+//            'email_verified_at' => now(),
+//            'remember_token' => Str::random(10),
+//
+//        ]);
     }
 }

@@ -12,19 +12,19 @@ class VendorsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('vendors')->insert(array(
-            array(
-                'name' => 'kk mart',
-            ),
-            array(
-
-                'name' => 'cg',
-            ),
-            array(
-
-                'name' => 'surya',
-            )
-
-        ));
+//        DB::table('vendors')->insert(array(
+//            array(
+//                'name' => 'kk mart',
+//            ),
+//            array(
+//
+//                'name' => 'cg',
+//            ),
+//            array(
+//
+//                'name' => 'surya',
+//            )
+//
+//        ));
     }
 }
