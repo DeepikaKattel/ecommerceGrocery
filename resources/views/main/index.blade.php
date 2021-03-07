@@ -490,7 +490,7 @@
             <div class="item">
                 <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                 @if($f->discount)
-                    <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                    <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                 @endif
                 <div class="body center">
                    <div class="title">
@@ -500,7 +500,9 @@
                    <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                </div>
                <div class="prices center">
-                   <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                   @if($f->prev_price)
+                       <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                   @endif
                    <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                </div>
                <div class="add-cart-button center inner-xxs">
@@ -518,7 +520,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -528,7 +530,9 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
@@ -546,7 +550,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -556,13 +560,14 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
                         <a class="le-button" onclick="addToCart({{$f->id}}, '<?php echo csrf_token() ?>')" style="color:white">Add To Cart <i class="fas fa-shopping-cart"></i></a>
                     </div>
-
                 </div>
             @endforeach
         </div>
@@ -577,7 +582,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -587,7 +592,9 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
@@ -609,7 +616,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -619,7 +626,9 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
@@ -642,7 +651,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -652,7 +661,9 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">
@@ -674,7 +685,7 @@
                 <div class="item">
                     <a href="/product/{{$f->id}}"><img alt="" src="assets/images/blank.gif" data-echo="/storage/images/products/{{$f->image}}"/></a>
                     @if($f->discount)
-                        <span class="badge badge-danger discount-badge">{{$f->discount}}% Off</span>
+                        <span class="badge badge-danger discount-badge">Rs. {{$f->discount}} Off</span>
                     @endif
                     <div class="body center">
                         <div class="title">
@@ -684,7 +695,9 @@
                         <span class="badge badge-success" style="background:green">{{$f->availability}}</span>
                     </div>
                     <div class="prices center">
-                        <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @if($f->prev_price)
+                            <div class="price-prev"><del>Rs.{{$f->prev_price}}</del></div>
+                        @endif
                         <div class="price-current" style="color:#ff8159">Rs.{{$f->rate}}</div>
                     </div>
                     <div class="add-cart-button center inner-xxs">

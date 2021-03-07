@@ -41,12 +41,12 @@
 
                     <div id="owl-single-product" class="owl-carousel">
                         <div class="single-product-gallery-item" id="slide1">
-                            <a data-rel="prettyphoto" href="/assets/images/products/product-gallery-01.jpg">
+                            <a data-rel="prettyphoto">
                                 <img class="img-responsive" alt="" src="/assets/images/blank.gif" data-echo="/storage/images/products/{{$product->image}}" />
                             </a>
                         </div><!-- /.single-product-gallery-item -->
                     </div><!-- /.single-product-slider -->
-                
+
                 </div><!-- /.single-product-gallery -->
             </div><!-- /.gallery-holder -->
 
@@ -66,7 +66,9 @@
 
                     <div class="prices">
                         <div class="price-current">Rs.{{$product->rate}}</div>
-                        <div class="price-prev">Rs.{{$product->prev_price}}</div>
+                        @if($product->prev_price)
+                            <div class="price-prev">Rs.{{$product->prev_price}}</div>
+                        @endif
                     </div>
 
                     <div class="qnt-holder">
@@ -106,8 +108,8 @@
                             <span class="seperator">/</span>
 
                             <div class="inline">
-                                <?php 
-                                    $tags = explode(',', $product->tags);    
+                                <?php
+                                    $tags = explode(',', $product->tags);
                                 ?>
                                 <label>tag:</label>
                                 <span><a href="/products/tag_search?tag={{$product->brand}}">{{$product->brand}}</a>,</span>

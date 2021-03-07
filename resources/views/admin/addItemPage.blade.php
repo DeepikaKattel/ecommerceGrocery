@@ -30,10 +30,10 @@
                 <label for="brand">Brand:</label>
                 <input type="text" class="form-control" name="brand">
             </div>
-            <div class="form-group">
-                <label for="discount">Discount:</label>
-                <input type="number" class="form-control" name="discount">
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="discount">Discount:</label>--}}
+{{--                <input type="number" class="form-control" name="discount">--}}
+{{--            </div>--}}
             <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea class="form-control" name="description" rows="5"></textarea>

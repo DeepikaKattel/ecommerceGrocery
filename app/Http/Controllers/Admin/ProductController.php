@@ -45,7 +45,6 @@ class ProductController extends Controller
             'quantity' => 'required',
             'availability' => 'required',
             'rate' => 'required',
-            'prev_price' => 'required',
             'sku' => 'required',
             'image' => 'image|nullable|max:1999',
             'tags' => 'required',
@@ -66,7 +65,6 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
-        $product->discount = $request->input('discount');
 
 //        if (Auth::user()->isAdmin()) {
 //            $product->vendor_id = $request->input('vendor_id');
@@ -77,6 +75,9 @@ class ProductController extends Controller
         $product->quantity = $request->input('quantity');
         $product->rate = $request->input('rate');
         $product->prev_price = $request->input('prev_price');
+        if($product->prev_price) {
+            $product->discount = $product->prev_price - $product->rate;
+        }
         $product->availability = $request->input('availability');
         $product->image = $fileNameToStore;
         $product->sku = $request->input('sku');
@@ -112,7 +113,7 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
 
-        $product->discount = $request->input('discount');
+
 
 //        if (Auth::user()->isAdmin()) {
 //            $product->vendor_id = $request->input('vendor_id');
@@ -123,6 +124,9 @@ class ProductController extends Controller
         $product->quantity = $request->input('quantity');
         $product->rate = $request->input('rate');
         $product->prev_price = $request->input('prev_price');
+        if($product->prev_price) {
+            $product->discount = $product->prev_price - $product->rate;
+        }
         $product->availability = $request->input('availability');
         $product->image = $fileNameToStore;
         $product->sku = $request->input('sku');

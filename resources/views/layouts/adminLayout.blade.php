@@ -28,6 +28,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
       {{--  For search autocomplete  --}}
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <style>
+          table tr td{
+              font-size: 12px;
+          }
+          table tr th{
+              font-size: 12px;
+          }
+      </style>
   </head>
 
   <body class="hold-transition sidebar-mini layout-fixed">

@@ -98,4 +98,5 @@ Route::get('file-export', 'Admin\ProductController@fileExport')->name('file-expo
 
 
 Auth::routes();
+
 Route::get('/profile', 'ProfileController@showProfile');

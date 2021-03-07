@@ -20,7 +20,6 @@ class AdminSeeder extends Seeder
             'password' => bcrypt('community1234'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
-
         ]);
     }
 }
