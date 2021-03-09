@@ -140,6 +140,35 @@ class CartController extends Controller
         }
     }
 
+    public function addItemCart(Request $request){
+        if (Auth::check()) {
+            $item = CartItem::find($request->input('cartItem'));
+            if ($item === null) {
+                return response()->json(array("error" => "Cart not found"), 404);
+            } else {
+                if ($item->quantity == 1) {
+                    $item->quantity += 1;;
+                } else {
+                    $item->quantity += 1;
+                    $item->save();
+                }
+                $item->cart->grand_total += $item->product->rate;
+                if ($item->cart->discount){
+                    $item->cart->discount -= $item->product->rate * 0.02;
+                    $item->cart->grand_total += $item->product->rate * 0.02;
+                }
+                if ($item->cart->grand_total < 0){
+                    $item->cart->grand_total = 0;
+                }
+                $item->cart->save();
+            }
+            return $this->getCart($request);
+        } else {
+            return response()->json(array("error" => "Unauthorized error"), 401);
+        }
+    }
+
+
     public function showProduct($id) {
         $product = Product::find($id);
         $departments = Department::all();
@@ -151,8 +180,11 @@ class CartController extends Controller
             ['user_id', '=', Auth::id()],
             ['checkout', '=', 0]
         ])->get();
+        $userDetails = User::where([
+            ['id', '=', Auth::id()]
+            ])->first();
 
-        return view('main.checkout', ['cart_id' => $cart[0]->id]);
+        return view('main.checkout', ['cart_id' => $cart[0]->id,'userDetails' => $userDetails]);
     }
 
     public function checkout(Request $request) {
@@ -178,7 +210,7 @@ class CartController extends Controller
             $checkout->save();
             $cart->save();
             Alert::success('Thank you', 'Your order is being processed');
-            return redirect('/');
+            return redirect('/profile');
         }
     }
 }

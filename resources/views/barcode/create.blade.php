@@ -23,12 +23,20 @@
             @csrf
             <div class="form-group">
                 <label for="banner1">Title</label>
-                <input type="text"class="form-control" name="title">
+                <input type="text" class="form-control" name="title">
             </div>
 
             <div class="form-group">
                 <label for="image">Image:</label><br>
                 <input type="file" name="image">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" name="status">
+                    <option value="inactive" selected>Inactive</option>
+                    <option value="active">Active</option>
+                </select>
             </div>
 
 

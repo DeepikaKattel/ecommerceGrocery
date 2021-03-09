@@ -12,7 +12,7 @@ class ProfileController extends Controller
 {
     public function showProfile() {
         $profileCarts = Cart::where('user_id', Auth::id())->get();
-        $barcode = BarCode::first();
+        $barcode = BarCode::where('status','active')->first();
         return view('main.profile', compact('profileCarts','barcode'));
     }
 }

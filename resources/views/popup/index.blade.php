@@ -25,8 +25,9 @@
                 <tr class="text-center">
                     <th>Sn</th>
                     <th>Title</th>
-                    <th>Discount 1</th>
+                    <th>Discount</th>
                     <th>Banner</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
                     @foreach ($popup as $p)
@@ -38,6 +39,7 @@
                             <td>{{$p->title}}</td>
                             <td>{{$p->discount1}}</td>
                             <td>{{$p->banner}}</td>
+                            <td>{{$p->status}}</td>
                             <td>
                             <a href="{{route('popup.edit',$p->id)}}"><i class="fa fa-lg fa-edit"></i></a>
                              @method('DELETE')

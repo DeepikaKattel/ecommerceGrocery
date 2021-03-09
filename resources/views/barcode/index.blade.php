@@ -26,6 +26,7 @@
                     <th>Sn</th>
                     <th>Title</th>
                     <th>Image</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
                     @foreach ($barcode as $b)
@@ -36,6 +37,7 @@
                             <td>{{$c}}</td>
                             <td>{{$b->title}}</td>
                             <td>{{$b->image}}</td>
+                            <td>{{$b->status}}</td>
 
                             <td>
                             <a href="{{route('barcode.edit',$b->id)}}"><i class="fa fa-lg fa-edit"></i></a>

@@ -33,6 +33,13 @@
                 <label for="banner">Banner</label><br>
                 <input type="file" name="banner">
             </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" name="status">
+                    <option value="inactive" selected>Inactive</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
 
             <input class="form-control btn btn-primary mb-4" type="submit" value="Submit">
         </form>

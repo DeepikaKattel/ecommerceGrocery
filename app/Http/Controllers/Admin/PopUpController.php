@@ -59,6 +59,7 @@ class PopUpController extends Controller
         $popup = new PopUp();
         $popup->title = $request->input('title');
         $popup->discount1 = $request->input('discount1');
+        $popup->status = $request->input('status');
         $popup->banner = $fileNameToStore1;
         $popup->save();
         return redirect('/popup');
@@ -108,6 +109,7 @@ class PopUpController extends Controller
         }
         $popup->title = $request->input('title');
         $popup->discount1 = $request->input('discount1');
+        $popup->status = $request->input('status');
         $popup->banner = $fileNameToStore1;
 
         $popup->save();

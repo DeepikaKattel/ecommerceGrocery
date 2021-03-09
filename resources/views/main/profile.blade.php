@@ -107,6 +107,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                @if($barcode)
                 <div class="col-sm-6 ml-3 mb-2">
 {{--                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>--}}
                     <a class="btn btn-info btn-md" data-toggle="modal" data-target="#paymentModal"><i class="fa fa-money" aria-hidden="true"></i> {{_('Make Payment')}}</a>
@@ -134,6 +135,7 @@
                     </div>
 
                 </div>
+                @endif
             </div>
         </div>
     </main><!-- /#aboutUs-us -->

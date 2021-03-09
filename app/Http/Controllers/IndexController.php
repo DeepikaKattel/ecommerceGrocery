@@ -44,7 +44,7 @@ class IndexController extends Controller
 
         $frontEnd = Frontend::orderBy('created_at', 'desc')->get();
         $banner = Banner::first();
-        $popup = PopUp::first();
+        $popup = PopUp::where('status', '=', 'active')->first();
         $products = Product::get();
         return view('main.index', [
             'featured' => $featured_products,

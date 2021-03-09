@@ -709,6 +709,7 @@
         </div>
     </div>
 @endif
+@if($popup)
 <div class="container">
 
     <!-- Modal -->
@@ -734,6 +735,7 @@
     </div>
 
 </div>
+@endif
     <div class="row mx-2" style="margin-top: 100px;margin-bottom: -50px">
         <div class="imageBanner col-lg-9 col-12">
             <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner1}}"/>

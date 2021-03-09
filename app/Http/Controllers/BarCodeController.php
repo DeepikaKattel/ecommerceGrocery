@@ -56,6 +56,7 @@ class BarCodeController extends Controller
 
         $barcode = new BarCode();
         $barcode->title = $request->input('title');
+        $barcode->status = $request->input('status');
         $barcode->image = $fileNameToStore1;
         $barcode->save();
         return redirect('/barcode');
@@ -104,6 +105,7 @@ class BarCodeController extends Controller
             $fileNameToStore1 = 'no-image.jpg';
         }
         $barcode->title = $request->input('title');
+        $barcode->status = $request->input('status');
         $barcode->image = $fileNameToStore1;
 
         $barcode->save();

@@ -40,6 +40,11 @@
                 <strong>Warning!</strong> Cart is empty!! <br>
                 Add to cart to checkout
             </div>
+
+            <div class="section col-xs-12 col-sm-12 col-md-12" id="cart-list">
+
+            </div>
+
             <div class="section col-xs-12 col-sm-6 col-md-8">
                 <h1 class="border">Checkout Form</h1>
 
@@ -47,12 +52,12 @@
                     @csrf
                     <div class="field-row">
                         <label>Name:</label>
-                        <input type="text" class="le-input" name="name" required autofocus>
+                        <input type="text" class="le-input" name="name" value="{{$userDetails->name}}" required autofocus>
                     </div><!-- /.field-row -->
 
                     <div class="field-row">
                         <label>Email(Optional):</label>
-                        <input type="email" class="le-input" name="email">
+                        <input type="email" class="le-input" name="email" value="{{$userDetails->email}}">
                     </div><!-- /.field-row -->
 
 
@@ -75,9 +80,7 @@
                     {{-- </fieldset> --}}
                 </form>
             </div>
-            <div class="section col-xs-12 col-sm-6 col-md-4" id="cart-list">
 
-            </div>
         </div>
     </div>
 @endsection

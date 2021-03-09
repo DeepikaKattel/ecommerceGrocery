@@ -2603,7 +2603,24 @@
 	border: none;
 }
 
-
+table th{
+    padding:25px;
+    vertical-align: middle;
+    text-align: center;
+}
+table td{
+    padding:25px;
+    vertical-align: middle;
+    text-align: center;
+}
+.close1 span{
+    color:red;
+    font-size: 25px;
+}
+.close1 span:hover{
+    color:black;
+    font-size: 25px;
+}
 
 
 
