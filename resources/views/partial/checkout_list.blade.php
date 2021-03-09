@@ -35,8 +35,7 @@
         @endforeach
         <tfoot width="15rem">
             <td>
-                Grand Total After Discount:
-                <span class="amount">{{$grand_total}}</span>
+                <span>Grand Total After Discount: {{$grand_total}}</span>
             </td>
         </tfoot>
     </table>
