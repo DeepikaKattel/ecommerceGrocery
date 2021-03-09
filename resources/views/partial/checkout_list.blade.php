@@ -12,7 +12,7 @@
                 <th>Quantity</th>
                 <th>Product Name</th>
                 <th>Price</th>
-                <th>Remove</th>
+
             </tr>
         </thead>
         @foreach ($cartItems as $cartItem)
@@ -23,13 +23,13 @@
                 @endphp
                 <td>{{$c}}</td>
                 <td><img alt="" style="width:50px;height:50px" src="/storage/images/products/{{$cartItem->product->image}}" class="img-responsive"/></td>
-                <td><div class="close1" onclick="removeItem({{$cartItem->id}}, '<?php echo csrf_token() ?>')"> <span> - </span> </div> {{$cartItem->quantity}} <div class="close1" onclick="addItem({{$cartItem->id}}, '<?php echo csrf_token() ?>')"> <span> + </span> </div></td>
+                <td><div class="close1" onclick="removeItem({{$cartItem->id}}, '<?php echo csrf_token() ?>')"> <span> <i class="fa fa-minus-circle"></i></span> </div> {{$cartItem->quantity}} <div class="close1" onclick="addItem({{$cartItem->id}}, '<?php echo csrf_token() ?>')"> <span>  <i class="fa fa-plus-circle"></i> </span> </div></td>
                 <td>{{$cartItem->product->name}}</td>
                 <td> @php
                         echo $cartItem->quantity * $cartItem->product->rate;
                     @endphp
                 </td>
-                <td></td>
+
             </tr>
         </tbody>
         @endforeach

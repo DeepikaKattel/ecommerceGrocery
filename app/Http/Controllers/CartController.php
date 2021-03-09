@@ -146,12 +146,9 @@ class CartController extends Controller
             if ($item === null) {
                 return response()->json(array("error" => "Cart not found"), 404);
             } else {
-                if ($item->quantity == 1) {
-                    $item->quantity += 1;;
-                } else {
-                    $item->quantity += 1;
-                    $item->save();
-                }
+                $item->quantity += 1;
+                $item->save();
+
                 $item->cart->grand_total += $item->product->rate;
                 if ($item->cart->discount){
                     $item->cart->discount -= $item->product->rate * 0.02;

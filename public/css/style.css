@@ -2604,23 +2604,27 @@
 }
 
 table th{
-    padding:25px;
+    padding: 30px;
     vertical-align: middle;
     text-align: center;
 }
 table td{
-    padding:25px;
+    padding: 30px;
     vertical-align: middle;
     text-align: center;
 }
+.close1{
+    display: inline-block;
+    padding:10px;
+}
 .close1 span{
     color:red;
-    font-size: 25px;
+    font-size: 20px;
 }
 .close1 span:hover{
     color:black;
-    font-size: 25px;
 }
+
 
 
 
