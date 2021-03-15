@@ -10,6 +10,7 @@ use App\Product;
 use App\Department;
 use App\Vendor;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ProductsExport;
@@ -101,16 +102,19 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $product = Product::find($id);
         if($request->hasFile('image')){
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().".".$extension;
             $image = Image::make($request->file('image'))->encode('webp', 100)->resize(200, 130)->save(storage_path('/app/public/images/products/'  .  $fileNameToStore . '.webp'));
+
+            Storage::delete('public/images/products/'.$product->image);
         } else {
             $fileNameToStore = 'no-image.jpg';
         }
-        $product = Product::find($id);
+
         $product->name = $request->input('name');
         $product->brand = $request->input('brand');
 

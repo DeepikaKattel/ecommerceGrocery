@@ -56,8 +56,11 @@
                 <input type="text" class="form-control" name="sku" value="{{old('sku', $items->sku)}}">
             </div>
             <div class="form-group">
-                <label for="image">Image:</label><br>
-                <input type="file" name="image" value="{{old('image', $items->image)}}">
+                <label for="image">Banner 3</label>
+                <input type="file" name="image" >
+                <div class="col-md-2 col-sm-2">
+                    <img src="/storage/images/products/{{$items->image}}" style=" height: auto; max-width:12em;" alt = "Image">
+                </div>
             </div>
             <div class="form-group">
                 <label for="tags">Tags:</label>

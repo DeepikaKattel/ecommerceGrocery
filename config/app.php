@@ -235,7 +235,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'ImageOptimizer' => Spatie\LaravelImageOptimizer\ImageOptimizerFacade::class,
+
 
     ],
 
