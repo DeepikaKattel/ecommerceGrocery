@@ -37,6 +37,14 @@
                 <label for="discount2">Discount 2</label>
                 <input type="text" class="form-control" name="discount2">
             </div>
+            <div class="form-group">
+                <label for="banner2">Banner 3:</label><br>
+                <input type="file" name="banner3">
+            </div>
+            <div class="form-group">
+                <label for="discount2">Discount 3</label>
+                <input type="text" class="form-control" name="discount3">
+            </div>
 
             <input class="form-control btn btn-primary mb-4" type="submit" value="Submit">
         </form>

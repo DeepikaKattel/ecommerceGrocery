@@ -10,6 +10,7 @@ use App\Product;
 use App\Department;
 use App\Vendor;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ProductsExport;
 use Illuminate\Support\Facades\Auth;
@@ -45,9 +46,7 @@ class ProductController extends Controller
             'quantity' => 'required',
             'availability' => 'required',
             'rate' => 'required',
-            'sku' => 'required',
             'image' => 'image|nullable|max:1999',
-            'tags' => 'required',
             'dept_id' => 'required'
         ]);
 
@@ -56,7 +55,9 @@ class ProductController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().".".$extension;
-            $path = $request->file('image')->storeAs('public/images/products', $fileNameToStore);
+
+            //with resize
+            $image = Image::make($request->file('image'))->encode('webp', 100)->resize(200, 130)->save(storage_path('/app/public/images/products/'  .  $fileNameToStore . '.webp'));
         } else {
             $fileNameToStore = 'no-image.jpg';
         }
@@ -79,7 +80,7 @@ class ProductController extends Controller
             $product->discount = $product->prev_price - $product->rate;
         }
         $product->availability = $request->input('availability');
-        $product->image = $fileNameToStore;
+        $product->image = $fileNameToStore . '.webp';
         $product->sku = $request->input('sku');
         $product->tags = $request->input('tags');
         $product->featured = ($request->featured == "on") ? 1 : 0;
@@ -105,7 +106,7 @@ class ProductController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().".".$extension;
-            $path = $request->file('image')->storeAs('public/images/products', $fileNameToStore);
+            $image = Image::make($request->file('image'))->encode('webp', 100)->resize(200, 130)->save(storage_path('/app/public/images/products/'  .  $fileNameToStore . '.webp'));
         } else {
             $fileNameToStore = 'no-image.jpg';
         }
@@ -128,7 +129,7 @@ class ProductController extends Controller
             $product->discount = $product->prev_price - $product->rate;
         }
         $product->availability = $request->input('availability');
-        $product->image = $fileNameToStore;
+        $product->image = $fileNameToStore . '.webp';
         $product->sku = $request->input('sku');
         $product->tags = $request->input('tags');
         $product->featured = ($request->featured == "on") ? 1 : 0;

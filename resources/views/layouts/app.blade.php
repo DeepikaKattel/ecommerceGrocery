@@ -17,13 +17,6 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-    {{--  For popup modal  --}}
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-
      <!-- Site Icons -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png')}}">
@@ -118,7 +111,7 @@
 {{--    <script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <script src="{{asset('js/carousel.js')}}"></script>
 {{--    <!-- ALL PLUGINS -->--}}
     <script src="{{asset('js/jquery.superslides.min.js')}}"></script>

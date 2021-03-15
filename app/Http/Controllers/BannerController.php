@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class BannerController extends Controller
 {
@@ -45,6 +47,8 @@ class BannerController extends Controller
             'discount1' => 'required',
             'banner2' => 'image|nullable|max:1999',
             'discount2' => 'required',
+            'banner3' => 'image|nullable|max:1999',
+            'discount3' => 'required',
         ]);
         if($request->hasFile('banner1')){
             $filenameWithExt = $request->file('banner1')->getClientOriginalName();
@@ -64,6 +68,15 @@ class BannerController extends Controller
         } else {
             $fileNameToStore2 = 'no-image.jpg';
         }
+        if($request->hasFile('banner3')){
+            $filenameWithExt = $request->file('banner3')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('banner3')->getClientOriginalExtension();
+            $fileNameToStore3 = $filename.'_'.time().".".$extension;
+            $path = $request->file('banner3')->storeAs('public/images/banner', $fileNameToStore3);
+        } else {
+            $fileNameToStore3 = 'no-image.jpg';
+        }
 
 
         $banner = new Banner();
@@ -71,6 +84,8 @@ class BannerController extends Controller
         $banner->discount1 = $request->input('discount1');
         $banner->banner2 = $fileNameToStore2;
         $banner->discount2 = $request->input('discount2');
+        $banner->banner3 = $fileNameToStore3;
+        $banner->discount3 = $request->input('discount3');
         $banner->save();
         return redirect('/banner');
     }
@@ -114,8 +129,9 @@ class BannerController extends Controller
             $extension = $request->file('banner1')->getClientOriginalExtension();
             $fileNameToStore1 = $filename.'_'.time().".".$extension;
             $path = $request->file('banner1')->storeAs('public/images/banner', $fileNameToStore1);
-        } else {
-            $fileNameToStore1 = 'no-image.jpg';
+
+            Storage::delete('public/images/banner/'.$banner->banner1);
+
         }
         if($request->hasFile('banner2')){
             $filenameWithExt = $request->file('banner2')->getClientOriginalName();
@@ -123,14 +139,33 @@ class BannerController extends Controller
             $extension = $request->file('banner2')->getClientOriginalExtension();
             $fileNameToStore2 = $filename.'_'.time().".".$extension;
             $path = $request->file('banner2')->storeAs('public/images/banner', $fileNameToStore2);
-        } else {
-            $fileNameToStore2 = 'no-image.jpg';
+
+            Storage::delete('public/images/banner/'.$banner->banner2);
         }
 
-        $banner->banner1 = $fileNameToStore1;
+
+        if($request->hasFile('banner3')){
+            $filenameWithExt = $request->file('banner3')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('banner3')->getClientOriginalExtension();
+            $fileNameToStore3 = $filename.'_'.time().".".$extension;
+            $path = $request->file('banner3')->storeAs('public/images/banner', $fileNameToStore3);
+
+            Storage::delete('public/images/banner/'.$banner->banner3);
+
+        }
+        if($request->hasFile('banner1')){
+            $banner->banner1 = $fileNameToStore1;
+        }
         $banner->discount1 = $request->input('discount1');
-        $banner->banner2 = $fileNameToStore2;
+        if($request->hasFile('banner2')){
+            $banner->banner2 = $fileNameToStore2;
+        }
         $banner->discount2 = $request->input('discount2');
+        if($request->hasFile('banner3')){
+            $banner->banner3 = $fileNameToStore3;
+        }
+        $banner->discount3 = $request->input('discount3');
         $banner->save();
         return redirect('/banner');
     }

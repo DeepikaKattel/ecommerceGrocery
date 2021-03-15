@@ -737,14 +737,24 @@
 </div>
 @endif
     <div class="row mx-2" style="margin-top: 100px;margin-bottom: -50px">
-        <div class="imageBanner col-lg-9 col-12">
+        @if($banner->banner1)
+        <div class="imageBanner col-lg-4 col-12">
             <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner1}}"/>
             <span class="badge badge-danger notify-badge">{{$banner->discount1}}</span>
         </div>
-        <div class="imageBanner col-lg-3 col-12">
+        @endif
+        @if($banner->banner2)
+        <div class="imageBanner col-lg-4 col-12">
             <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner2}}"/>
             <span class="badge badge-danger notify-badge">{{$banner->discount2}}</span>
         </div>
+        @endif
+        @if($banner->banner3)
+        <div class="imageBanner col-lg-4 col-12">
+            <img style="height:200px;width:100%" alt="" src="assets/images/blank.gif" data-echo="/storage/images/banner/{{$banner->banner3}}"/>
+            <span class="badge badge-danger notify-badge">{{$banner->discount3}}</span>
+        </div>
+        @endif
     </div>
     </div><!-- /.wrapper -->
 

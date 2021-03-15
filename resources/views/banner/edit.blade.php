@@ -23,19 +23,38 @@
             @method('PATCH')
             <div class="form-group">
                 <label for="banner1">Banner 1</label>
-                <input type="file" name="banner1" value="{{old('banner1', $banner->banner1)}}">
+                <input type="file" class="form-control"name="banner1">
+                <div class="col-md-2 col-sm-2">
+                    <img src="/storage/images/banner/{{$banner->banner1}}" style=" height: auto; max-width:12em;" alt = "Image">
+                </div>
             </div>
             <div class="form-group">
                 <label for="discount1">Discount 1</label>
                 <input type="text" class="form-control" name="discount1" value="{{old('discount1', $banner->discount1)}}">
+
             </div>
             <div class="form-group">
                 <label for="banner2">Banner 2</label>
-                <input type="file" name="banner2" value="{{old('banner2', $banner->banner2)}}">
+                <input type="file" name="banner2">
+                <div class="col-md-2 col-sm-2">
+                    <img src="/storage/images/banner/{{$banner->banner2}}" style=" height: auto; max-width:12em;" alt = "Image">
+                </div>
             </div>
             <div class="form-group">
                 <label for="discount2">Discount 2</label>
                 <input type="text" class="form-control" name="discount2" value="{{old('discount2', $banner->discount2)}}">
+            </div>
+
+            <div class="form-group">
+                <label for="banner3">Banner 3</label>
+                <input type="file" name="banner3" >
+                <div class="col-md-2 col-sm-2">
+                    <img src="/storage/images/banner/{{$banner->banner3}}" style=" height: auto; max-width:12em;" alt = "Image">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="discount3">Discount 3</label>
+                <input type="text" class="form-control" name="discount3" value="{{old('discount3', $banner->discount3)}}">
             </div>
 
             <input class="form-control btn btn-primary mb-4" type="submit" value="Submit">
