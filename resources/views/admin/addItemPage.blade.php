@@ -24,11 +24,11 @@
             @csrf
             <div class="form-group">
                 <label for="name">Product Name:</label>
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" required>
             </div>
             <div class="form-group">
                 <label for="brand">Brand:</label>
-                <input type="text" class="form-control" name="brand">
+                <input type="text" class="form-control" name="brand" required>
             </div>
 {{--            <div class="form-group">--}}
 {{--                <label for="discount">Discount:</label>--}}
@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label for="rate">Rate:</label>
-                <input type="number" class="form-control" name="rate">
+                <input type="number" class="form-control" name="rate" required>
             </div>
             <div class="form-group">
                 <label for="prev_price">Previous Price:</label>
@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label for="tags">Tags:</label>
-                <input type="text" class="form-control" name="tags">
+                <input type="text" class="form-control" name="tags" required>
             </div>
              <div class="form-group">
                 <label for="availability">Availability:</label>

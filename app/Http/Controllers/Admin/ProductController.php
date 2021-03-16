@@ -108,6 +108,7 @@ class ProductController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().".".$extension;
+//            $path = $request->file('image')->storeAs('public/images/products', $fileNameToStore . '.webp');
             $image = Image::make($request->file('image'))->encode('webp', 100)->resize(200, 130)->save(storage_path('/app/public/images/products/'  .  $fileNameToStore . '.webp'));
 
             Storage::delete('public/images/products/'.$product->image);
@@ -133,7 +134,9 @@ class ProductController extends Controller
             $product->discount = $product->prev_price - $product->rate;
         }
         $product->availability = $request->input('availability');
-        $product->image = $fileNameToStore . '.webp';
+        if($request->hasFile('image')) {
+            $product->image = $fileNameToStore . '.webp';
+        }
         $product->sku = $request->input('sku');
         $product->tags = $request->input('tags');
         $product->featured = ($request->featured == "on") ? 1 : 0;
@@ -178,7 +181,7 @@ class ProductController extends Controller
 
     public  function search(Request $request){
         $search = $request->get('search');
-        $items = Product::with('department')->where('name', 'like', '%'.$search.'%')->Paginate(5);
+        $items = Product::with('department')->where('name', 'like', '%'.$search.'%')->Paginate(20);
         $catList = DB::table('departments')->pluck('id', 'department_name');
         return view('admin.itemList',['items' => $items])->with('catList', $catList);
     }
