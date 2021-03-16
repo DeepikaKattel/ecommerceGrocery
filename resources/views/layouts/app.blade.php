@@ -14,7 +14,7 @@
     <title>Community Mart</title>
 
     {{--  For search autocomplete  --}}
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet"  href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
      <!-- Site Icons -->
@@ -53,12 +53,12 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/logo.png">
 
-    <script src="{{asset('js/carousel.js')}}"></script>
+    <script src="{{asset('js/carousel.js')}}" defer></script>
 
     <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
     <!--[if lt IE 9]>
-    <script src="/assets/js/html5shiv.js"></script>
-    <script src="/assets/js/respond.min.js"></script>
+    <script src="/assets/js/html5shiv.js" defer></script>
+    <script src="/assets/js/respond.min.js" defer></script>
     <![endif]-->
 
 </head>
